@@ -170,7 +170,7 @@ body {
 .how-it-works-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.85);
+/*     background: rgba(255, 255, 255, 0.85); */
 }
 
 .how-it-works-section .container {
@@ -355,7 +355,7 @@ body {
 .contact-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(28, 25, 23, 0.6);
+/*     background: rgba(28, 25, 23, 0.6); */
 }
 
 .contact-section .container {
