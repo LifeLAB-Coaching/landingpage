@@ -1,6 +1,6 @@
 // Calendly integration
 function openCalendly() {
-    window.open('https://calendly.com/prateek-neupane', '_blank');
+    window.open('https://calendar.app.google/nsgtUywvGJirg5mV8', '_blank');
 }
 
 // Toast notification system
