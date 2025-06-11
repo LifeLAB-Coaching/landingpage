@@ -20,33 +20,42 @@ function showToast(title, description) {
 }
 
 // Contact form handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            description: formData.get('description')
-        };
-        
-        // Log form data (in a real implementation, you'd send this to a server)
-        console.log('Form submitted:', data);
-        
-        // Show success message
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
         showToast(
-            "Thank you for reaching out!",
-            "I'll get back to you within 24 hours."
+          "Thank you for reaching out!",
+          "I’ll get back to you within 24 hours."
         );
-        
-        // Reset form
         contactForm.reset();
+      } else {
+        return response.json().then(data => {
+          showToast(
+            "Oops—something went wrong.",
+            data.error || "Please try again later."
+          );
+        });
+      }
+    })
+    .catch(() => {
+      showToast(
+        "Network error.",
+        "Please check your connection and try again."
+      );
     });
+  });
 });
 
 // Smooth scrolling for anchor links (if you add navigation)
