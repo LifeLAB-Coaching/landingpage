@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Lab Nepal | Book Experiences with Prateek</title>
+    <meta name="description" content="Book cultural tours, food tours, Nagarkot escapes, and riverside getaways in Kathmandu directly with Prateek." />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="index.html" style="text-decoration: none; color: #1c1917; font-weight: 600; font-size: 1.25rem;">LifeLAB Experiences</a>
+            <nav class="nav-links" style="display:flex; gap:1.5rem; align-items:center;">
+                <a href="#experiences" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Experiences</a>
+                <a href="#why-book" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Why direct</a>
+                <a href="#host" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Meet Prateek</a>
+                <a href="#faq" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="section experiences-hero">
+            <div class="container experiences-hero-content">
+                <div class="hero-text-content">
+                    <div class="hero-chip-row">
+                        <span class="chip">Local host</span>
+                        <span class="chip">Private-friendly</span>
+                    </div>
+                    <h1>From coffee in the city to sunsets in the hills.</h1>
+                    <p class="offer-intro">Explore Kathmandu, Bhaktapur, the stupas, food streets, Nagarkot, and riverside escapes with Prateek — a Kathmandu-born host, professor, musician, and storyteller.</p>
+                    <div class="hero-actions">
+                        <a class="cta-button ext-link" style="text-decoration:none; display:inline-block;" href="#reserve">Reserve directly</a>
+                        <a class="btn-secondary ext-link" style="text-decoration:none; display:inline-block;" href="#experiences">Browse experiences</a>
+                    </div>
+                </div>
+
+                <div class="hero-side">
+                    <div class="reserve-widget" id="reserve">
+                        <h3 class="how-it-works-title" style="margin-top:0;">Start your booking</h3>
+                        <p style="color: #78716c; font-size: 0.875rem; margin-bottom: 1.5rem;">Send a ready-to-go inquiry in a tap</p>
+                        
+                        <div class="field-grid">
+                            <div class="field">
+                                <label for="experienceSelect">Experience</label>
+                                <select id="experienceSelect" class="form-input"></select>
+                            </div>
+                            <div class="field">
+                                <label for="dateInput">Preferred date</label>
+                                <input id="dateInput" type="date" class="form-input" />
+                            </div>
+                            <div class="field">
+                                <label for="guestCount">Guests</label>
+                                <select id="guestCount" class="form-input">
+                                    <option value="1">1 guest</option>
+                                    <option value="2">2 guests</option>
+                                    <option value="3" selected>3 guests</option>
+                                    <option value="4">4 guests</option>
+                                    <option value="5">5 guests</option>
+                                    <option value="6">6+ guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field" style="margin-bottom: 1.5rem;">
+                            <label for="notesInput">Anything Prateek should know?</label>
+                            <textarea id="notesInput" class="form-textarea" placeholder="Food preferences, timing, overnight interest, bigger vehicle needs, or anything else."></textarea>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                            <a class="cta-button ext-link" style="text-decoration:none; display:inline-block;" id="whatsAppLink" href="#" target="_blank" rel="noopener">Send WhatsApp</a>
+                            <a class="btn-secondary ext-link" style="text-decoration:none; display:inline-block;" id="emailLink" href="#">Send via Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer-section section" id="experiences">
+            <div class="container">
+                <h2 class="section-title">Choose your kind of day</h2>
+                <p class="offer-intro" style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Browse cultural walks, food-led adventures, scenic hill escapes, and overnight getaways. Tap a card to reserve that exact experience.</p>
+                
+                <div class="filter-row" id="filterRow" style="justify-content: center;"></div>
+                <div class="experiences-grid" id="experiencesGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="why-book">
+            <div class="container">
+                <h2 class="section-title">Why book direct?</h2>
+                <div class="how-it-works-grid">
+                    <div class="how-it-works-card">
+                        <div class="how-it-works-content">
+                            <h3 class="how-it-works-title">Keep it personal</h3>
+                            <p style="color: #57534e;">Instead of fitting into a rigid platform format, guests can ask for slower pacing, more photo stops, more food focus, or a more relaxed conversational day.</p>
+                        </div>
+                    </div>
+                    <div class="how-it-works-card">
+                        <div class="how-it-works-content">
+                            <h3 class="how-it-works-title">Better value for both sides</h3>
+                            <p style="color: #57534e;">Booking directly avoids marketplace fees and leaves more room for better pricing, custom add-ons, and direct coordination with the host.</p>
+                        </div>
+                    </div>
+                    <div class="how-it-works-card">
+                        <div class="how-it-works-content">
+                            <h3 class="how-it-works-title">Perfect for private trips</h3>
+                            <p style="color: #57534e;">These experiences work especially well for couples, friends, and small groups who want something more flexible than a standard group tour.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="host">
+            <div class="container">
+                <h2 class="section-title">Meet Prateek</h2>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <div class="profile-image">
+                            <img src="Prateek.jpg" alt="Prateek Raj Neupane" />
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                            <span class="chip">Kathmandu local</span>
+                            <span class="chip">20+ years hosting</span>
+                            <span class="chip">English + Nepali</span>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-card">
+                            <div class="about-card-content">
+                                <p class="about-text">
+                                    Born and raised in Kathmandu, I’m an assistant professor, underground musician, and actor, and for more than 20 years I’ve been showing international friends around Kathmandu Valley and beyond. My background in education, music, film, and human connection shapes the way I host: relaxed, thoughtful, and personal. I speak English and Nepali, and I love helping travelers experience Nepal through local stories, conversation, food, and places that matter.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Starting price guide</h2>
+                <div class="pricing-card" style="padding:0; background:transparent; border:none; box-shadow:none; max-width:800px;">
+                    <div class="pricing-table" id="pricingTable"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">Good to know before booking</h2>
+                <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item open">
+                        <button type="button" class="faq-toggle"><span>What is included?</span><span>−</span></button>
+                        <div class="faq-content">
+                            <div>Hosting, local guidance, and transport in Prateek’s own hatchback for up to 3 guests are included when listed. Food, drinks, entry tickets, and accommodation are paid directly to vendors unless clearly noted otherwise.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle"><span>What if our group is bigger than 3?</span><span>+</span></button>
+                        <div class="faq-content">
+                            <div>Prateek can help arrange one or more cabs or a larger rental vehicle. Bigger cars generally range from NPR 5,000 to NPR 15,000 per day depending on size.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle"><span>How do we reserve and pay?</span><span>+</span></button>
+                        <div class="faq-content">
+                            <div>Guests can send a direct booking inquiry by WhatsApp or email from this page. Prateek can confirm availability, answer questions, and share final payment instructions directly.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-toggle"><span>Can we customize a trip?</span><span>+</span></button>
+                        <div class="faq-content">
+                            <div>Yes. That is one of the biggest benefits of booking direct. Food routes, pacing, scenic stops, overnight details, and group transport can all be adjusted based on availability.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-title">LifeLAB Experiences</h3>
+            <p class="footer-subtitle">Direct bookings with Prateek Raj Neupane</p>
+            <p class="footer-quote">
+                "Life is a story. Living is in the now. You can always edit the script."
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const WHATSAPP_NUMBER = '9779800000000';
+        const CONTACT_EMAIL = 'hello@lifelabnepal.com';
+
+        const experiences = [
+            {
+                id: 'kathmandu-patan',
+                category: 'Culture',
+                title: 'Kathmandu & Patan Durbar Squares',
+                subtitle: 'Two royal squares, one rich day of stories, photos, and local perspective.',
+                duration: 'Full day',
+                price: 'From NPR 4,000',
+                guests: '1–3 included',
+                image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Kathmandu Durbar Square + Patan Durbar Square in one day',
+                    'Optional local lunch and dinner stops',
+                    'Great for first-time visitors who want context, not just monuments'
+                ]
+            },
+            {
+                id: 'bhaktapur',
+                category: 'Culture',
+                title: 'Bhaktapur Durbar Square Day Trip',
+                subtitle: 'A slower, more focused cultural day in one of the valley’s most atmospheric heritage areas.',
+                duration: 'Half to full day',
+                price: 'From NPR 3,800',
+                guests: '1–3 included',
+                image: 'https://images.unsplash.com/photo-1612528443702-f6741f70a049?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'One-site deep dive with a relaxed pace',
+                    'Photos, videos, and local conversation',
+                    'Ideal for architecture lovers and slower travelers'
+                ]
+            },
+            {
+                id: 'stupas',
+                category: 'Spiritual',
+                title: 'Swayambhu & Boudhanath',
+                subtitle: 'A meaningful day around two iconic stupas, with stories, reflection, and city views.',
+                duration: 'Full day',
+                price: 'From NPR 3,800',
+                guests: '1–3 included',
+                image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Visit Monkey Temple and Boudhanath in one outing',
+                    'Strong fit for culture, spirituality, and photography',
+                    'Optional lunch and dinner nearby'
+                ]
+            },
+            {
+                id: 'food-tour',
+                category: 'Food',
+                title: 'Taste Kathmandu with a Local',
+                subtitle: 'A flexible food adventure shaped around your appetite, comfort level, and curiosity.',
+                duration: '3–5 hours',
+                price: 'From NPR 2,800',
+                guests: '1–3 easy',
+                image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Choose from Newari, Tibetan, Thakali, barbecue, coffee, sweets, and more',
+                    'Food is paid directly so the route stays flexible',
+                    'Feels like exploring with a local friend'
+                ]
+            },
+            {
+                id: 'nagarkot-day',
+                category: 'Escape',
+                title: 'Nagarkot Day Escape',
+                subtitle: 'A hill getaway with scenic stops, tea breaks, and wide-view moments outside the city.',
+                duration: 'Full day',
+                price: 'From NPR 4,800',
+                guests: '1–3 included',
+                image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Drive from Kathmandu with photo and tea stops',
+                    'Visit Nagarkot View Tower',
+                    'Perfect for couples and easy scenic days'
+                ]
+            },
+            {
+                id: 'nagarkot-overnight',
+                category: 'Overnight',
+                title: 'Nagarkot Sunset & Sunrise Overnight',
+                subtitle: 'Slow down for sunset, sunrise, fresh air, and maybe even stargazing.',
+                duration: 'Overnight',
+                price: 'From NPR 6,800',
+                guests: '1–3 included',
+                image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Resort stay paid directly to the vendor',
+                    'Sunset + sunrise pacing makes this feel special',
+                    'A strong romantic or slow-travel option'
+                ]
+            },
+            {
+                id: 'trishuli-beer',
+                category: 'Overnight',
+                title: 'Trishuli Riverside Craft Beer Getaway',
+                subtitle: 'A mellow adults-only overnight with river views, fresh local beer, and an easy pace.',
+                duration: 'Overnight',
+                price: 'From NPR 7,500',
+                guests: 'Adults only',
+                image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80',
+                highlights: [
+                    'Kurintar overnight with scenic road-trip energy',
+                    'Optional factory visit if available',
+                    'Beer and stay are paid directly to vendors'
+                ]
+            }
+        ];
+
+        const categories = ['All', ...new Set(experiences.map((item) => item.category))];
+        const filterRow = document.getElementById('filterRow');
+        const experiencesGrid = document.getElementById('experiencesGrid');
+        const experienceSelect = document.getElementById('experienceSelect');
+        const dateInput = document.getElementById('dateInput');
+        const guestCount = document.getElementById('guestCount');
+        const notesInput = document.getElementById('notesInput');
+        const whatsAppLink = document.getElementById('whatsAppLink');
+        const emailLink = document.getElementById('emailLink');
+        const pricingTable = document.getElementById('pricingTable');
+
+        const today = new Date().toISOString().split('T')[0];
+        if(dateInput) dateInput.min = today;
+
+        function renderFilters(active = 'All') {
+            if(!filterRow) return;
+            filterRow.innerHTML = categories.map((category) => `
+                <button class="filter-btn ${category === active ? 'active' : ''}" type="button" data-category="${category}">${category}</button>
+            `).join('');
+
+            filterRow.querySelectorAll('.filter-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const category = btn.dataset.category;
+                    renderFilters(category);
+                    renderExperiences(category);
+                });
+            });
+        }
+
+        function reserveButtons(experienceId) {
+            return `
+                <button class="cta-button js-reserve" data-experience="${experienceId}" style="border:none; cursor:pointer;">Reserve</button>
+                <button class="btn-secondary js-plan" data-experience="${experienceId}">Plan with Prateek</button>
+            `;
+        }
+
+        function renderExperiences(active = 'All') {
+            if(!experiencesGrid) return;
+            const visible = active === 'All' ? experiences : experiences.filter((item) => item.category === active);
+            experiencesGrid.innerHTML = visible.map((item) => `
+                <article class="experience-card">
+                  <div class="experience-media">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy" />
+                    <span class="experience-badge">${item.category}</span>
+                    <span class="experience-price">${item.price}</span>
+                  </div>
+                  <div class="experience-body">
+                    <h3 class="experience-title">${item.title}</h3>
+                    <p class="experience-subtitle">${item.subtitle}</p>
+                    <div class="meta-row">
+                      <span class="meta-pill">${item.duration}</span>
+                      <span class="meta-pill">${item.guests}</span>
+                    </div>
+                    <div class="highlights">
+                      ${item.highlights.map((highlight) => `<div>• ${highlight}</div>`).join('')}
+                    </div>
+                  </div>
+                  <div class="card-actions" style="padding: 1.5rem; padding-top: 0;">
+                    ${reserveButtons(item.id)}
+                  </div>
+                </article>
+            `).join('');
+
+            experiencesGrid.querySelectorAll('.js-reserve, .js-plan').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const selectedExperience = button.dataset.experience;
+                    if(experienceSelect) experienceSelect.value = selectedExperience;
+                    updateInquiryLinks();
+                    const reserveSect = document.getElementById('reserve');
+                    if(reserveSect) reserveSect.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        }
+
+        function renderSelect() {
+            if(!experienceSelect) return;
+            experienceSelect.innerHTML = experiences.map((item) => `
+                <option value="${item.id}">${item.title}</option>
+            `).join('');
+        }
+
+        function renderPricing() {
+            if(!pricingTable) return;
+            pricingTable.innerHTML = `
+                <div class="pricing-row head">
+                  <div>Experience</div>
+                  <div>Direct rate</div>
+                  <div>Note</div>
+                </div>
+                ${experiences.map((item) => `
+                  <div class="pricing-row">
+                    <div><strong>${item.title}</strong></div>
+                    <div>${item.price}</div>
+                    <div>${item.guests}</div>
+                  </div>
+                `).join('')}
+            `;
+        }
+
+        function buildMessage() {
+            if(!experienceSelect) return '';
+            const selected = experiences.find((item) => item.id === experienceSelect.value) || experiences[0];
+            const date = dateInput.value ? dateInput.value : 'flexible date';
+            const guests = guestCount.value;
+            const notes = notesInput.value.trim();
+            return `Hi Prateek! I'd like to book the "${selected.title}" experience on ${date} for ${guests} guest(s). ${notes ? `Notes: ${notes}` : ''}`.trim();
+        }
+
+        function updateInquiryLinks() {
+            if(!whatsAppLink || !emailLink) return;
+            const message = buildMessage();
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            const emailUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Booking inquiry from Life Lab Nepal')}&body=${encodeURIComponent(message)}`;
+            whatsAppLink.href = whatsappUrl;
+            emailLink.href = emailUrl;
+        }
+
+        [experienceSelect, dateInput, guestCount, notesInput].forEach((element) => {
+            if(element) {
+                element.addEventListener('input', updateInquiryLinks);
+                element.addEventListener('change', updateInquiryLinks);
+            }
+        });
+
+        document.querySelectorAll('.faq-toggle').forEach((button) => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach((other) => {
+                    other.classList.remove('open');
+                    const span = other.querySelector('button span:last-child');
+                    if(span) span.textContent = '+';
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    const span = item.querySelector('button span:last-child');
+                    if(span) span.textContent = '−';
+                }
+            });
+        });
+
+        renderFilters();
+        renderExperiences();
+        renderSelect();
+        renderPricing();
+        updateInquiryLinks();
+    </script>
+</body>
+</html>
