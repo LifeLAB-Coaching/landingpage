@@ -14,11 +14,14 @@
     <header class="site-header">
         <div class="container nav">
             <a href="index.html" style="text-decoration: none; color: #1c1917; font-weight: 600; font-size: 1.25rem;">LifeLAB Experiences</a>
-            <nav class="nav-links" style="display:flex; gap:1.5rem; align-items:center;">
-                <a href="#experiences" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Experiences</a>
-                <a href="#why-book" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Why direct</a>
-                <a href="#host" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">Meet Prateek</a>
-                <a href="#faq" class="nav-link" style="color:#57534e; text-decoration:none; font-weight:500;">FAQ</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#experiences" class="nav-link">Experiences</a>
+                <a href="#why-book" class="nav-link">Why direct</a>
+                <a href="#host" class="nav-link">Meet Prateek</a>
+                <a href="#faq" class="nav-link">FAQ</a>
             </nav>
         </div>
     </header>
@@ -445,6 +448,14 @@
                 }
             });
         });
+
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
 
         renderFilters();
         renderExperiences();
