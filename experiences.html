@@ -8,6 +8,7 @@
     <meta name="description"
         content="Book cultural tours, food tours, Nagarkot escapes, and riverside getaways in Kathmandu directly with Prateek." />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -105,7 +106,12 @@
                     reserve that exact experience.</p>
 
                 <div class="filter-row" id="filterRow" style="justify-content: center;"></div>
-                <div class="experiences-grid" id="experiencesGrid"></div>
+                <div class="swiper experiences-slider" style="padding-bottom: 3rem; --swiper-theme-color: #d97706;">
+                    <div class="swiper-wrapper" id="experiencesGrid"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </section>
 
@@ -227,6 +233,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const WHATSAPP_NUMBER = '9779841442299';
         const CONTACT_EMAIL = 'experiences@lifelabnepal.com';
@@ -239,7 +246,7 @@
                 subtitle: 'Two royal squares, one rich day of stories, photos, and local perspective.',
                 duration: 'Full day',
                 guests: '1–3 included',
-                image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://images.unsplash.com/photo-1550642249-6e5605421172?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Kathmandu Durbar Square + Patan Durbar Square in one day',
                     'Optional local lunch and dinner stops',
@@ -253,7 +260,7 @@
                 subtitle: 'A slower, more focused cultural day in one of the valley’s most atmospheric heritage areas.',
                 duration: 'Half to full day',
                 guests: '1–3 included',
-                image: 'https://images.unsplash.com/photo-1612528443702-f6741f70a049?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://plus.unsplash.com/premium_photo-1697729591214-a4dc41d7d760?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'One-site deep dive with a relaxed pace',
                     'Photos, videos, and local conversation',
@@ -267,7 +274,7 @@
                 subtitle: 'A meaningful day around two iconic stupas, with stories, reflection, and city views.',
                 duration: 'Full day',
                 guests: '1–3 included',
-                image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://plus.unsplash.com/premium_photo-1694475032847-e6a228961e98?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Visit Monkey Temple and Boudhanath in one outing',
                     'Strong fit for culture, spirituality, and photography',
@@ -281,7 +288,7 @@
                 subtitle: 'A flexible food adventure shaped around your appetite, comfort level, and curiosity.',
                 duration: '3–5 hours',
                 guests: '1–3 easy',
-                image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://images.unsplash.com/photo-1595917248955-a96ace4780b6?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Choose from Newari, Tibetan, Thakali, barbecue, coffee, sweets, and more',
                     'Food is paid directly so the route stays flexible',
@@ -295,7 +302,7 @@
                 subtitle: 'A hill getaway with scenic stops, tea breaks, and wide-view moments outside the city.',
                 duration: 'Full day',
                 guests: '1–3 included',
-                image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://images.unsplash.com/photo-1674575055196-62a37159f466?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Drive from Kathmandu with photo and tea stops',
                     'Visit Nagarkot View Tower',
@@ -309,7 +316,7 @@
                 subtitle: 'Slow down for sunset, sunrise, fresh air, and maybe even stargazing.',
                 duration: 'Overnight',
                 guests: '1–3 included',
-                image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Resort stay paid directly to the vendor',
                     'Sunset + sunrise pacing makes this feel special',
@@ -323,7 +330,7 @@
                 subtitle: 'A mellow adults-only overnight with river views, fresh local beer, and an easy pace.',
                 duration: 'Overnight',
                 guests: 'Adults only',
-                image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80',
+                image: 'https://images.unsplash.com/photo-1641584495061-89b9025f563b?auto=format&fit=crop&w=1200&q=80',
                 highlights: [
                     'Kurintar overnight with scenic road-trip energy',
                     'Optional factory visit if available',
@@ -345,6 +352,29 @@
 
         const today = new Date().toISOString().split('T')[0];
         if (dateInput) dateInput.min = today;
+
+        let swiperInstance = null;
+        function initSwiper() {
+            if (swiperInstance) {
+                swiperInstance.destroy(true, true);
+            }
+            swiperInstance = new Swiper('.experiences-slider', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+        }
 
         function renderFilters(active = 'All') {
             if (!filterRow) return;
@@ -372,7 +402,8 @@
             if (!experiencesGrid) return;
             const visible = active === 'All' ? experiences : experiences.filter((item) => item.category === active);
             experiencesGrid.innerHTML = visible.map((item) => `
-                <article class="experience-card">
+                <div class="swiper-slide" style="height: auto;">
+                <article class="experience-card" style="height: 100%;">
                   <div class="experience-media">
                     <img src="${item.image}" alt="${item.title}" loading="lazy" />
                     <span class="experience-badge">${item.category}</span>
@@ -392,6 +423,7 @@
                     ${reserveButtons(item.id)}
                   </div>
                 </article>
+                </div>
             `).join('');
 
             experiencesGrid.querySelectorAll('.js-reserve, .js-plan').forEach((button) => {
@@ -403,6 +435,7 @@
                     if (reserveSect) reserveSect.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
+            setTimeout(initSwiper, 10);
         }
 
         function renderSelect() {
