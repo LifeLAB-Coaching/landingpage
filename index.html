@@ -1,158 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeLAB Coaching - Prateek Raj Neupane</title>
-    <meta name="description" content="LifeLAB Coaching with Prateek Raj Neupane - A space to slow down, breathe, reflect, and reconnect with who you truly are." />
+    <title>LifeLAB Nepal</title>
+    <meta name="description" content="LifeLAB Nepal: A space to slow down, breathe, reflect, and reconnect." />
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="prefetch" href="sessions.html">
+    <link rel="prefetch" href="experiences.html">
+    <!-- Prerender for instant loading in supported browsers -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {"source": "list", "urls": ["sessions.html", "experiences.html"]}
+      ],
+      "prefetch": [
+        {"source": "list", "urls": ["sessions.html", "experiences.html", "styles.css"]}
+      ]
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .portal-card.loading {
+            opacity: 0.6;
+            transform: scale(0.98);
+            pointer-events: none;
+        }
+
+        .portal-card.loading .portal-link {
+            color: #a8a29e;
+        }
+
+        .portal-card.loading .portal-link::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+
+            0%,
+            20% {
+                content: '';
+            }
+
+            40% {
+                content: '.';
+            }
+
+            60% {
+                content: '..';
+            }
+
+            80%,
+            100% {
+                content: '...';
+            }
+        }
+    </style>
 </head>
-<body>
-    <!-- Hero Banner -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
+
+<body style="background-color: #fafaf9;">
+
+    <header class="site-header">
+        <div class="container nav" style="justify-content: center;">
+            <a href="index.html"
+                style="text-decoration: none; color: #1c1917; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em;">LifeLAB
+                Nepal</a>
+        </div>
+    </header>
+
+    <!-- Global Hero -->
+    <section class="hero-section"
+        style="min-height: 55vh; background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2560&q=80'); background-position: center 30%;">
+        <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.4);"></div>
         <div class="hero-content">
-            <h1 class="hero-title">LifeLAB: Let's Figure It Out Together</h1>
-            <p class="hero-subtitle">"Life is a story. Living is in the now. You can always edit the script."</p>
-            <button class="cta-button" onclick="openCalendly()">Book a Session</button>
+            <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 1rem;">LifeLAB</h1>
+            <p class="hero-subtitle" style="font-size: 1.5rem; letter-spacing: 0.05em;">A space for meaningful journeys,
+                within and around you.</p>
         </div>
     </section>
 
-    <!-- What I Offer -->
-    <section class="section offer-section">
+    <!-- Services Portal -->
+    <section class="section" style="padding-top: 6rem; padding-bottom: 6rem;">
         <div class="container">
-            <h2 class="section-title">What I Offer</h2>
-            <div class="offer-content">
-                <p class="offer-intro">
-                    A space to slow down, breathe, reflect, and reconnect with who you truly are beyond your roles, expectations, or past.
-                </p>
-                <p class="offer-intro">
-                    Whether you're a young professional at a crossroads, a thoughtful elder seeking renewal, or simply someone feeling stuck—you are welcome here.
-                </p>
-                <p class="offer-description">Each session is a quiet, honest space where I:</p>
-                <div class="offer-grid">
-                    <div class="offer-card">
-                        <div class="offer-card-content">
-                            <svg class="offer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                            <p>Listen deeply to what you're saying (and not saying)</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-content">
-                            <svg class="offer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"></path>
-                            </svg>
-                            <p>Reflect your words like a sounding mirror</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-content">
-                            <svg class="offer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            <p>Share insights or questions that may shift your perspective</p>
-                        </div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-content">
-                            <svg class="offer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                            </svg>
-                            <p>Sometimes offer a short meditation or a written reflection you can take home</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="offer-conclusion">
-                    Help you begin rewriting the story you're living
-                </p>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title" style="margin-bottom: 4rem;">Explore Our Spaces</h2>
 
-    <!-- How It Works -->
-    <section class="section how-it-works-section">
-        <div class="how-it-works-overlay"></div>
-        <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <div class="how-it-works-grid">
-                <div class="how-it-works-card">
-                    <div class="how-it-works-content">
-                        <h3 class="how-it-works-title">Personalized Sessions</h3>
-                        <p>1-on-1 sessions, tailored to your pace and depth</p>
-                    </div>
-                </div>
-                <div class="how-it-works-card">
-                    <div class="how-it-works-content">
-                        <h3 class="how-it-works-title">Organic Flow</h3>
-                        <p>We might talk, sit in silence, meditate, write—whatever arises</p>
-                    </div>
-                </div>
-                <div class="how-it-works-card">
-                    <div class="how-it-works-content">
-                        <h3 class="how-it-works-title">Flexible Duration</h3>
-                        <p>Flexible, depending on your time and presence</p>
-                    </div>
-                </div>
-                <div class="how-it-works-card">
-                    <div class="how-it-works-content">
-                        <h3 class="how-it-works-title">Your Choice</h3>
-                        <p>You decide—one-time clarity, or an ongoing journey</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="portal-grid">
 
-    <!-- Themes We May Explore -->
-    <section class="section themes-section">
-        <div class="container">
-            <h2 class="section-title">Themes We May Explore</h2>
-            <div class="themes-grid">
-                <div class="theme-card">
-                    <div class="theme-content">
-                        <p class="theme-text">"Who am I, beyond all these roles?"</p>
+                <!-- 1. Coaching -->
+                <a href="sessions.html" class="portal-card" onclick="this.classList.add('loading')">
+                    <div class="portal-image">
+                        <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=80"
+                            alt="LifeLAB Sessions" />
                     </div>
-                </div>
-                <div class="theme-card">
-                    <div class="theme-content">
-                        <p class="theme-text">"What am I really seeking?"</p>
+                    <div class="portal-content">
+                        <h3>LifeLAB Sessions</h3>
+                        <p>1-on-1 life coaching, active listening, and honest reflection with Prateek.</p>
+                        <span class="portal-link">Explore Sessions &rarr;</span>
                     </div>
-                </div>
-                <div class="theme-card">
-                    <div class="theme-content">
-                        <p class="theme-text">"How can I move through fear or confusion?"</p>
-                    </div>
-                </div>
-                <div class="theme-card">
-                    <div class="theme-content">
-                        <p class="theme-text">"What does it mean to live from love instead of pressure?"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </a>
 
-    <!-- Pricing -->
-    <section class="section pricing-section">
-        <div class="container">
-            <h2 class="section-title">Pricing & Donation</h2>
-            <div class="pricing-card">
-                <div class="pricing-content">
-                    <p class="pricing-text">
-                        Pricing is donation-based / pay-what-feels-right.
-                    </p>
-                </div>
+                <!-- 2. Experiences -->
+                <a href="experiences.html" class="portal-card" onclick="this.classList.add('loading')">
+                    <div class="portal-image">
+                        <img src="https://images.unsplash.com/photo-1550642249-6e5605421172?auto=format&fit=crop&w=800&q=80"
+                            alt="LifeLAB Experiences" />
+                    </div>
+                    <div class="portal-content">
+                        <h3>LifeLAB Experiences</h3>
+                        <p>Personalized cultural tours, food adventures, and mindful getaways.</p>
+                        <span class="portal-link">View Experiences &rarr;</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
     <!-- About Prateek -->
-    <section class="section about-section">
+    <section class="section about-section" id="about">
         <div class="container">
             <h2 class="section-title">About Prateek</h2>
             <div class="about-grid">
@@ -165,9 +136,16 @@
                     <div class="about-card">
                         <div class="about-card-content">
                             <p class="about-text">
-                                Prateek Raj Neupane is a life coach, educator, musician, and actor with a passion for personal transformation. 
-                                He has taught/trained Leadership, Psychology, Design Thinking, Human Centered Approach to Entrepreneurship, and many more subjects at King’s College Nepal, and many other organizations, helping students and clients build clarity, confidence, and purpose. 
-                                With a background in performing arts and a deep understanding of the human mind, Prateek’s coaching blends insight, creativity, and compassion to guide people toward meaningful change.
+                                Prateek Raj Neupane is a life coach, educator, musician, actor, and Kathmandu local who
+                                creates spaces for genuine human connection and meaningful personal growth. With a
+                                background in teaching leadership, psychology, design thinking, and human-centered
+                                entrepreneurship at King’s College Nepal and other organizations, he has helped people
+                                find greater clarity, confidence, and purpose. Born and raised in Kathmandu, Prateek
+                                also brings more than 20 years of sharing the valley and beyond with international
+                                friends in a way that feels personal, thoughtful, and real. Whether you meet him
+                                through coaching or curated local experiences, his approach invites you to slow down,
+                                connect more deeply with yourself and others, and experience life with greater presence,
+                                insight, and heart.
                             </p>
                         </div>
                     </div>
@@ -176,88 +154,17 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section testimonials-section">
-        <div class="container">
-            <h2 class="section-title">What People Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">I have known and worked with Prateek since the last 3 years. His "human" approach towards genuine conversations, active listening, deep observations, and empathy can guide/facilitate one in their journey of self-discovery. He is one of the few rare individuals that have seen and experienced life and career from multiple different angles and depths, which enables richer interactions, and a lot of food for thoughts for inner transformation.</p>
-<!--                         <p class="testimonial-author">— Client Name</p> -->
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">A few years back, I had a few one on one sessions with Prateek when I was struggling with my work and family commitments. He is an immensely kind person who listens to everything you have to say without the fear of being judged. My interactions with him were made me look at things from a different perspective and his suggestions made me a better decision maker. After the sessions you introspect in a way which is really beneficial for long-term life goals and happiness. I wholeheartedly recommend his sessions to anyone who is struggling with clarity of what direction to take in life from where you are now, and also how to go about doing it.</p>
-<!--                         <p class="testimonial-author">— Client Name</p> -->
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">Mr. Prateek is an exceptional life coach who has had a profound impact on my life. I have known him since taking his MBA 'Leadership' classes, where his guidance proved invaluable. In a world where true listeners are rare for everyone especially People With Disabilities, Mr. Prateek always provided a calm and humble space for me to share my challenges. He has a remarkable ability to instill a sense of peace and purpose, often reminding me that 'life is nothing' while simultaneously igniting a powerful energy within me. Inspired by his approach, I am passionate about learning how to navigate difficult situations with the same calmness and humility he embodies. He consistently encourages unconditional love and support for the underprivileged, truly living by his principles. I highly recommend him to anyone seeking not just advice, but a transformative perspective on life.</p>
-<!--                         <p class="testimonial-author">— Client Name</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Lead Capture -->
-    <section class="section contact-section">
-        <div class="contact-overlay"></div>
-        <div class="container">
-            <h2 class="section-title contact-title">Ready to Begin?</h2>
-            <div class="contact-form-wrapper">
-                <div class="contact-form-card">
-                    <div class="contact-form-header">
-                        <h3 class="contact-form-title">Let's Connect</h3>
-                    </div>
-                    <div class="contact-form-content">
-                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mgvykony" method="POST">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required class="form-input" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required class="form-input" />
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Your Phone (Optional)" class="form-input" />
-                            </div>
-                            <div class="form-group">
-                                <textarea name="description" placeholder="Tell me about your current crossroads..." rows="4" class="form-textarea"></textarea>
-                            </div>
-                            <button type="submit" class="form-submit-button">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-cta">
-                <p class="contact-cta-text">Or if you're ready to schedule immediately:</p>
-                <button class="cta-button" onclick="openCalendly()">Book a Session</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Unified Footer -->
     <footer class="footer">
         <div class="container">
-            <h3 class="footer-title">LifeLAB Coaching</h3>
-            <p class="footer-subtitle">with Prateek Raj Neupane</p>
-            <p class="footer-quote">
-                "Life is a story. Living is in the now. You can always edit the script."
+            <h3 class="footer-title">LifeLAB Nepal</h3>
+            <p class="footer-subtitle">Sessions • Experiences</p>
+            <p class="footer-quote" style="margin-top: 2rem;">
+                "A space for meaningful journeys, within and around you."
             </p>
         </div>
     </footer>
 
-    <!-- Toast notification -->
-    <div id="toast" class="toast hidden">
-        <div class="toast-content">
-            <h4 class="toast-title"></h4>
-            <p class="toast-description"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
+
 </html>

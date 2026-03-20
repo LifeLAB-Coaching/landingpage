@@ -11,7 +11,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Focus Overlay for Booking Form */
+        .focus-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 99;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .focus-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .reserve-widget {
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .reserve-widget.focused {
+            z-index: 100 !important;
+            transform: scale(1.03);
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.01), 0 0 0 8px rgba(217, 119, 6, 0.2), 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,6 +61,8 @@
                 </svg>
             </button>
             <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="sessions.html" class="nav-link">Sessions</a>
                 <a href="#experiences" class="nav-link">Experiences</a>
                 <a href="#why-book" class="nav-link">Why direct</a>
                 <a href="#host" class="nav-link">Meet Prateek</a>
@@ -36,26 +72,34 @@
     </header>
 
     <main id="top">
-        <section class="section experiences-hero">
-            <div class="container experiences-hero-content">
-                <div class="hero-text-content">
+        <section class="section experiences-hero"
+            style="position: relative; background-image: url('https://images.unsplash.com/photo-1674575055196-62a37159f466?auto=format&fit=crop&w=2560&q=80'); background-size: cover; background-position: center; padding-top: 8rem; padding-bottom: 6rem;">
+            <div class="hero-overlay" style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45);"></div>
+            <div class="container experiences-hero-content" style="position: relative; z-index: 10;">
+                <div class="hero-text-content" style="color: white;">
                     <div class="hero-chip-row">
-                        <span class="chip">Local host</span>
-                        <span class="chip">Private-friendly</span>
+                        <span class="chip"
+                            style="background: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(4px);">Local
+                            host</span>
+                        <span class="chip"
+                            style="background: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(4px);">Private-friendly</span>
                     </div>
-                    <h1>From coffee in the city to sunsets in the hills.</h1>
-                    <p class="offer-intro">Explore Kathmandu, Bhaktapur, the stupas, food streets, Nagarkot, and
+                    <h1 style="color: white;">A space to experience travel as a local.</h1>
+                    <p class="offer-intro" style="color: #e7e5e4;">Explore Kathmandu, Bhaktapur, the stupas, food
+                        streets, Nagarkot, and
                         riverside escapes with Prateek — a Kathmandu-born host, professor, musician, and storyteller.
                     </p>
-                    <div class="hero-actions">
-                        <a class="cta-button ext-link" style="text-decoration:none; display:inline-block;"
+                    <div class="hero-actions" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
+                        <a class="ext-link" style="text-decoration:none; display:inline-block; background: #d97706; color: white; padding: 0.65rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; letter-spacing: 0.01em;"
                             href="#reserve">Reserve directly</a>
-                        <a class="btn-secondary ext-link" style="text-decoration:none; display:inline-block;"
+                        <a class="ext-link"
+                            style="text-decoration:none; display:inline-block; background: rgba(255,255,255,0.15); color: white; padding: 0.5rem 1.25rem; border-radius: 0.375rem; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(4px); transition: background 0.2s; letter-spacing: 0.01em;"
                             href="#experiences">Browse experiences</a>
                     </div>
                 </div>
 
                 <div class="hero-side">
+                    <div id="focus-overlay" class="focus-overlay"></div>
                     <div class="reserve-widget" id="reserve">
                         <h3 class="how-it-works-title" style="margin-top:0;">Start your booking</h3>
                         <p style="color: #78716c; font-size: 0.875rem; margin-bottom: 1.5rem;">Send a ready-to-go
@@ -164,7 +208,8 @@
                         <div class="about-card">
                             <div class="about-card-content">
                                 <p class="about-text">
-                                    Born and raised in Kathmandu, I’m an assistant professor, underground musician, and
+                                    Born and raised in Kathmandu, I’m an former assistant professor, underground
+                                    musician, and
                                     actor, and for more than 20 years I’ve been showing international friends around
                                     Kathmandu Valley and beyond. My background in education, music, film, and human
                                     connection shapes the way I host: relaxed, thoughtful, and personal. I speak English
@@ -336,6 +381,17 @@
                     'Optional factory visit if available',
                     'Beer and stay are paid directly to vendors'
                 ]
+            },
+            {
+                id: 'custom',
+                category: 'Custom',
+                title: 'Custom Experience',
+                subtitle: 'Have something specific in mind? Let Prateek know and he will tailor an experience just for you.',
+                duration: 'Flexible',
+                guests: 'Flexible',
+                image: '',
+                highlights: [],
+                custom: true
             }
         ];
 
@@ -385,6 +441,13 @@
             filterRow.querySelectorAll('.filter-btn').forEach((btn) => {
                 btn.addEventListener('click', () => {
                     const category = btn.dataset.category;
+                    // Special case: Custom filter scrolls to form with Custom pre-selected
+                    if (category === 'Custom') {
+                        if (experienceSelect) experienceSelect.value = 'custom';
+                        updateInquiryLinks();
+                        enableFocusMode();
+                        return;
+                    }
                     renderFilters(category);
                     renderExperiences(category);
                 });
@@ -400,7 +463,8 @@
 
         function renderExperiences(active = 'All') {
             if (!experiencesGrid) return;
-            const visible = active === 'All' ? experiences : experiences.filter((item) => item.category === active);
+            const visible = (active === 'All' ? experiences : experiences.filter((item) => item.category === active))
+                .filter((item) => !item.custom);
             experiencesGrid.innerHTML = visible.map((item) => `
                 <div class="swiper-slide" style="height: auto;">
                 <article class="experience-card" style="height: 100%;">
@@ -431,8 +495,7 @@
                     const selectedExperience = button.dataset.experience;
                     if (experienceSelect) experienceSelect.value = selectedExperience;
                     updateInquiryLinks();
-                    const reserveSect = document.getElementById('reserve');
-                    if (reserveSect) reserveSect.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    enableFocusMode();
                 });
             });
             setTimeout(initSwiper, 10);
@@ -501,7 +564,72 @@
         renderExperiences();
         renderSelect();
         updateInquiryLinks();
+
+        // Focus Mode for Reserve Form
+        const overlay = document.getElementById('focus-overlay');
+        const reserveWidget = document.getElementById('reserve');
+        const reserveLinks = document.querySelectorAll('a[href="#reserve"]');
+
+        function enableFocusMode() {
+            if (overlay && reserveWidget) {
+                overlay.classList.add('active');
+                reserveWidget.classList.add('focused');
+
+                // Optional: Ensure it's scrolled nicely into view first
+                setTimeout(() => {
+                    reserveWidget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 10);
+            }
+        }
+
+        function disableFocusMode() {
+            if (overlay && reserveWidget) {
+                overlay.classList.remove('active');
+                reserveWidget.classList.remove('focused');
+            }
+        }
+
+        // Use event delegation so dynamically added Swiper slides are caught
+        document.body.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href="#reserve"]');
+            if (link) {
+                // If it's a link to #reserve, trigger focus mode
+                enableFocusMode();
+            }
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', disableFocusMode);
+        }
+
+        // Escape key to exit focus mode
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') disableFocusMode();
+        });
+
+        // Back-to-top button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
     </script>
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
 </body>
+
 
 </html>
