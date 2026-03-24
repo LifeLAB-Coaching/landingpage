@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         return response.json().then(data => {
           showToast(
-            "Oops—something went wrong.",
+            "Oops - something went wrong.",
             data.error || "Please try again later."
           );
         });
