@@ -103,8 +103,10 @@
         <div class="header-container">
             <a href="index.html" class="logo">LifeLAB Nepal</a>
             <nav class="nav">
-                <a href="#about" class="back-link">About Sessions</a>
-                <a href="index.html" class="nav-apply">Return to The Journey</a>
+                <a href="#about" class="back-link">Philosophy</a>
+                <a href="#founder" class="back-link">About Prateek</a>
+                <a href="#book" class="back-link">Request a Session</a>
+                <a href="index.html" class="nav-apply">Return to Retreat</a>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
@@ -178,7 +180,7 @@
             </div>
         </section>
 
-        <section class="section bg-stone">
+        <section id="founder" class="section bg-stone">
             <div class="container">
                 <div class="split-layout">
                     <div class="split-image fade-in-up">
@@ -244,7 +246,7 @@
                 <p>with Prateek Raj Neupane</p>
             </div>
             <div class="footer-links">
-                <a href="index.html">The Premium Retreat</a>
+                <a href="index.html">The Reflective Journey</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -252,6 +254,7 @@
         </div>
     </footer>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
     <script>
         // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
@@ -322,7 +325,23 @@
                 }
             });
         }
+
+                // Back to top
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 150) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     </script>
+    
 </body>
 
 </html>
