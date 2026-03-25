@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeLAB Nepal - A Himalayan Journey</title>
+    <title>LifeLAB Nepal - A Reflective Himalayan Journey</title>
     <meta name="description"
         content="Becoming Human  -  A Nepali Journey in the Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
 
@@ -27,6 +27,11 @@
                 <a href="#faq">FAQ</a>
                 <a href="apply.html" class="nav-apply">Apply to Join</a>
             </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -262,6 +267,26 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Mobile Menu
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.nav');
+
+        if (mobileMenuToggle && nav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('nav-open');
+                nav.classList.toggle('nav-open');
+                document.body.style.overflow = nav.classList.contains('nav-open') ? 'hidden' : '';
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('nav-open');
+                    nav.classList.remove('nav-open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
 
         // Header scroll effect
         const header = document.querySelector('.header');
