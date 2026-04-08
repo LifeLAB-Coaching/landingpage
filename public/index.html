@@ -7,7 +7,7 @@
 <title>LifeLAB Nepal - LifeLAB Nepal</title>
 <meta name="description" content="Becoming Human  -  A Reflective Journey in the Nepali Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
 
-<link rel="stylesheet" href="/styles.css?v=1775666699">
+<link rel="stylesheet" href="/styles.css?v=1775670286">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,15 +18,24 @@
     
         <header class="header">
     <div class="header-container">
-        <a href="/" class="logo">LifeLAB Nepal</a>
+        <a href='/' class="logo">LifeLAB Nepal</a>
         <nav class="nav">
-            <a href="/#intro">The Invitation</a>
+            <div class="nav-dropdown">
+                <a href="/#intro">The Invitation <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" style="margin-left: 2px; margin-top: 2px;">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg></a>
+                <div class="dropdown-content">
+                    <a href="/who-this-is-for/">Who This Is For</a>
+                    <a href="/why-nepal/">Why Nepal</a>
+                </div>
+            </div>
             <a href="/#journey">Reflective Journey</a>
             <a href="/journals/">Journals</a>
             <a href="/#founder">The Host</a>
             <a href="/#details">The Investment</a>
             <a href="/#faq">FAQ</a>
-            <a href="/apply/" class="nav-apply">Apply to Join</a>
+            <a href="/apply/" class="nav-apply">Begin Conversation</a>
         </nav>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
             <span></span>
@@ -35,7 +44,6 @@
         </button>
     </div>
 </header>
-
     
 
     <main class="">
@@ -49,14 +57,14 @@
     <div class="hero-content fade-in-up">
         <span class="hero-kicker">Limited to up to 3 participants</span>
         <h1 class="hero-title">Becoming Human</h1>
-        <p class="hero-subtitle" style="margin-bottom: 0.75rem; font-weight: 400;">An Intimate, Reflective
-            Journey in the
-            Nepali Himalayas.</p>
-        <p class="hero-subtitle" style="font-size: 1.15rem; opacity: 0.85; font-style: italic;">
-            Step away from the noise. Surrender to stillness. Rediscover what remains.
+        <p class="hero-subtitle"
+            style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            <i> An intimate and private reflective travel experience in Nepal for thoughtful individuals seeking
+                clarity, rest, reflection space, and reconnection with their authentic self.</i>
         </p>
         <div class="hero-actions">
-            <a href="/apply/" class="btn-primary">Apply to Join</a>
+            <a href='/apply/' class="btn-primary" style="padding: 1rem 3rem;">Begin the
+                Conversation</a>
         </div>
     </div>
     <div class="scroll-indicator">
@@ -96,7 +104,34 @@
 </section>
 
 
-<section id="journey" class="section journey-section">
+<section class="section bg-stone text-center" style="padding-top: 6rem; padding-bottom: 6rem;">
+    <div class="container narrow-container fade-in-up">
+        <h2 class="serif-title" style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--color-forest);">The Shape of
+            the Journey</h2>
+        <div
+            style="display: flex; flex-direction: column; align-items: center; gap: 1.2rem; color: var(--color-text-dark); font-size: 1.15rem;">
+            <p><strong>1. Application</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A
+                    brief written reflection of your intentions</span></p>
+            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+            <p><strong>2. Conversation</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A
+                    sincere, alignment-focused video call</span></p>
+            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+            <p><strong>3. Arrival</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A quiet,
+                    grounded welcome in Kathmandu</span></p>
+            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+            <p><strong>4. Slow Travel with Reflection</strong><br><span
+                    style="font-size: 0.95rem; color: var(--color-text-muted);">A
+                    deep, unhurried dive through the Himalayas</span></p>
+            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+            <p><strong>5. Integration</strong><br><span
+                    style="font-size: 0.95rem; color: var(--color-text-muted);">Space to process before departure</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="journey" class="section journey-section bg-ivory">
     <div class="container">
         <div class="split-layout">
             <div class="split-image fade-in-up">
@@ -144,20 +179,24 @@
     <div class="container">
         <div class="split-layout reverse">
             <div class="split-image fade-in-up">
-                <img src="/Prateek.jpg" alt="Prateek Raj Neupane" style="filter: grayscale(20%) contrast(110%);">
+                <img src='/Prateek.jpg' alt="Prateek Raj Neupane"
+                    style="filter: grayscale(20%) contrast(110%);">
             </div>
             <div class="split-content fade-in-up delay-1">
                 <h2 class="section-title">Your Host, Prateek</h2>
                 <p class="body-text">
-                    I grew up listening to stories under these same mountains. Having spent decades showing
-                    international friends the Kathmandu Valley, I realized travel's true power comes from deep
-                    conversation, not sightseeing.
+                    I grew up under these same skies, where the mountains were just part of everyday life-woven into
+                    conversations, festivals, and quiet moments. It wasn’t until later that I realized how special that
+                    feeling is for people arriving from faster, more demanding worlds.
                 </p>
                 <p class="body-text">
-                    I am not a spiritual guru; I am a former professor, an actor, a musician, and a local who
-                    believes in raw human connection and authentic experiences. I host only a few of these
-                    retreats each year on the requests of my foreigner friends so I can listen fully to
-                    each guest, checking in daily. This is your retreat as much as mine.
+                    I didn’t start hosting to show Nepal as a typical destination, but to share a different way of being
+                    shaped by this place. I believe the most meaningful travel isn’t about seeing more-it’s about
+                    feeling something shift within you. </p>
+                <p class="body-text">
+                    I’m not here to lead, but to accompany. I travel alongside a small group, creating a space where you
+                    can slow down, connect, and simply be yourself. Everything is built on trust, presence, and real
+                    human connection.
                 </p>
                 <blockquote class="founder-quote">
                     "Life is a story. Living is in the now. You can always edit the script."
@@ -174,12 +213,11 @@
         <div class="split-list mt-medium"
             style="display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             <div class="list-block">
-                <h3 class="serif-title"
-                    style="font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-forest);">Included in
+                <h3 class="serif-title" style="font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-forest);">
+                    Included in
                     Your Investment
                 </h3>
-                <ul class="body-text"
-                    style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.5;">
+                <ul class="body-text" style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.5;">
                     <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
                             style="color: var(--color-forest);">&mdash;</span> <span>Personal hosting, presence,
                             and attention by Prateek</span>
@@ -258,7 +296,7 @@
             <div class="faq-answer">
                 <p>You’re not buying a tour; you’re buying private companionship and spacious time. You are
                     paying for an intimate Reflective Journey where nothing is forced but everything is
-                    possible. The cost ($7,500) covers all ground transport in reliable vehicles, local guides,
+                    possible. The cost ($4,000 - $6,000) covers all ground transport in reliable vehicles,
                     comfortable lodging, local meals, and my full attention.</p>
             </div>
         </div>
@@ -286,13 +324,13 @@
 
 <section class="section cta-banner text-center" style="background-color: #1c1917; color: #e7e5e4;">
     <div class="container fade-in-up">
-        <h2 class="serif-title mb-large" style="color: #fafaf9;">Your Next Reflective Journey Awaits</h2>
+        <h2 class="serif-title mb-large" style="color: #fafaf9;">An Invitation to Pause</h2>
         <p class="body-text mb-large"
             style="max-width: 60ch; margin-left: auto; margin-right: auto; font-style: italic;">
-            Space is strictly limited to up to 3 guests per retreat to ensure intimacy and personal attention.
-            This Reflective Journey is by application only. I look for curious minds ready for reflection.
+            Space is strictly limited to up to 3 guests per journey to protect the privacy, intimacy, and profound quiet
+            of the container. Applications are thoughtfully reviewed, followed by a connection call.
         </p>
-        <a href="/apply/" class="btn-primary light">Start Your Application</a>
+        <a href='/apply/' class="btn-primary light">Begin the Conversation</a>
     </div>
 </section>
 
@@ -305,7 +343,9 @@
             <h3 class="footer-title">LifeLAB Nepal</h3>
             <p>A quiet space in the Himalayas.</p>
         </div>
-        <div class="footer-links">
+        <div class="footer-links" style="flex-wrap: wrap;">
+            <a href="/who-this-is-for/">Who This Is For</a>
+            <a href="/why-nepal/">Why Nepal</a>
             <a href="/#journey">Reflective Journey</a>
             <a href="/journals/">Journals</a>
             <a href="/#founder">The Host</a>

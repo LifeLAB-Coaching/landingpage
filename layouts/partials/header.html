@@ -1,14 +1,23 @@
 <header class="header">
     <div class="header-container">
-        <a href="{{ "/" | relURL }}" class="logo">LifeLAB Nepal</a>
+        <a href='{{ "/" | relURL }}' class="logo">LifeLAB Nepal</a>
         <nav class="nav">
-            <a href="{{ "/" | relURL }}#intro">The Invitation</a>
-            <a href="{{ "/" | relURL }}#journey">Reflective Journey</a>
-            <a href="{{ "/journals/" | relURL }}">Journals</a>
-            <a href="{{ "/" | relURL }}#founder">The Host</a>
-            <a href="{{ "/" | relURL }}#details">The Investment</a>
-            <a href="{{ "/" | relURL }}#faq">FAQ</a>
-            <a href="{{ "/apply/" | relURL }}" class="nav-apply">Apply to Join</a>
+            <div class="nav-dropdown">
+                <a href="/#intro">The Invitation <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" style="margin-left: 2px; margin-top: 2px;">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg></a>
+                <div class="dropdown-content">
+                    <a href="/who-this-is-for/">Who This Is For</a>
+                    <a href="/why-nepal/">Why Nepal</a>
+                </div>
+            </div>
+            <a href="/#journey">Reflective Journey</a>
+            <a href="/journals/">Journals</a>
+            <a href="/#founder">The Host</a>
+            <a href="/#details">The Investment</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/apply/" class="nav-apply">Begin Conversation</a>
         </nav>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
             <span></span>

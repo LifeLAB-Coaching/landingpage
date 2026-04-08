@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="section bg-stone text-center" style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="container narrow-container fade-in-up">
+        <h1 class="serif-title" style="font-size: 3.5rem; color: var(--color-forest); margin-bottom: 1rem;">{{ .Title }}</h1>
+        {{ if .Params.subtitle }}
+        <p style="font-size: 1.35rem; font-style: italic; color: var(--color-text-muted); max-width: 60ch; margin: 0 auto; text-shadow: none;">{{ .Params.subtitle }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="section bg-ivory" style="padding-top: 4rem;">
+    <div class="container narrow-container fade-in-up delay-1">
+        <article class="editorial-content">
+            {{ .Content }}
+        </article>
+        
+        <div style="margin-top: 5rem; text-align: center; border-top: 1px solid var(--color-stone); padding-top: 3rem;">
+            <p class="body-text mb-large" style="font-style: italic;">Ready to explore further?</p>
+            <a href="{{ "/apply/" | relURL }}" class="btn-primary" style="padding: 1rem 3rem;">Begin the Conversation</a>
+        </div>
+    </div>
+</section>
+{{ end }}
