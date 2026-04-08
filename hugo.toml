@@ -1,7 +1,7 @@
 baseURL = "https://lifelabnepal.com/"
 languageCode = "en-us"
 title = "LifeLAB Nepal"
-disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [markup]
   [markup.goldmark]
