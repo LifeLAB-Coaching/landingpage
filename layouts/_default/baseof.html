@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+    {{ partial "head.html" . }}
+    {{ block "extra_head" . }}{{ end }}
+</head>
+<body class="{{ if .Params.body_class }}{{ .Params.body_class }}{{ else }}retract-body{{ end }} {{ if and (eq .Section "journals") (not .Params.photo) }}dark-nav-page{{ end }}">
+    {{ if .Params.custom_header }}
+        {{ block "custom_header" . }}
+        <header class="header scrolled">
+            <div class="header-container">
+                <a href="{{ "/" | relURL }}" class="logo">LifeLAB Nepal</a>
+                <a href="{{ "/" | relURL }}" class="back-link">&larr; Return to Reflective Journey</a>
+            </div>
+        </header>
+        {{ end }}
+    {{ else }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
+    <main class="{{ if .Params.main_class }}{{ .Params.main_class }}{{ end }}">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ if .Params.custom_footer }}
+        {{ block "custom_footer" . }}
+        {{ end }}
+    {{ else if not .Params.hide_footer }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+    
+    <script src="{{ "script.js" | relURL }}"></script>
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

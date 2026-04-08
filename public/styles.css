@@ -185,6 +185,18 @@ a {
     color: var(--color-forest);
 }
 
+/* For pages without a dark hero banner */
+.dark-nav-page .header:not(.scrolled) .logo,
+.dark-nav-page .header:not(.scrolled) .nav a {
+    color: var(--color-text-dark) !important;
+    text-shadow: none !important;
+}
+
+.dark-nav-page .header:not(.scrolled) .nav-apply {
+    color: var(--color-forest) !important;
+    border-color: var(--color-forest) !important;
+}
+
 .nav {
     display: flex;
     gap: 2rem;

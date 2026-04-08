@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="section bg-stone pt-large">
+    <div class="container fade-in-up">
+        <div class="text-center mb-large">
+            <h1 class="serif-title" style="font-size: 3rem; margin-bottom: 1rem;">Journals</h1>
+            <p class="body-text large-text" style="max-width: 60ch; margin: 0 auto; color: var(--color-text-muted);">
+                Reflections, stories, and quiet moments captured along the journey.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 3rem; margin-top: 4rem;">
+            {{ range .Pages }}
+            <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block;" class="format-card fade-in-up">
+                {{ if .Params.photo }}
+                <div style="border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 4/3;">
+                    <img src="{{ .Params.photo | relURL }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                </div>
+                {{ end }}
+                <h2 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Title }}</h2>
+                <div style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">{{ .Date.Format "January 2, 2006" }}</div>
+                <p class="body-text" style="margin-bottom: 0;">{{ .Summary | truncate 120 }}</p>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
