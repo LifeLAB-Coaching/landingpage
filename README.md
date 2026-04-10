@@ -1,73 +1,61 @@
-# LifeLAB Coaching Website
+# LifeLAB Nepal
 
-A static website for LifeLAB Coaching by Prateek Neupane, designed for deployment on GitHub Pages.
+A contemplative, literary, and high-conversion landing page for LifeLAB Nepal, designed as a founder-hosted reflective journey. This site is built using **Hugo** for maximum performance and editorial flexibility.
 
 ## Features
 
-- Fully responsive design
-- Contact form with client-side validation
-- Calendly integration for booking sessions
-- Smooth scrolling animations
-- Toast notifications
-- Nature photography backgrounds
-- Earthy, neutral color palette
+- **Hugo-Powered**: Extremely fast build times and high lighthouse scores.
+- **Premium Aesthetics**: "Quiet Luxury" design system with glassmorphism and refined typography.
+- **Responsive Navigation**: Sophisticated mobile menu with a 1200px breakpoint for tablet compatibility.
+- **Editorial Content**: Markdown-based content management for journals and philosophical pages.
+- **Automated Deployment**: Integrated GitHub Actions for seamless delivery to GitHub Pages.
 
-## Deployment to GitHub Pages
+## Local Development
 
-1. Create a new repository on GitHub
-2. Upload all files to the repository
-3. Go to Settings > Pages
-4. Select "Deploy from a branch"
-5. Choose "main" branch and "/ (root)" folder
-6. Your site will be available at `https://yourusername.github.io/repository-name`
+To run this project locally, ensure you have [Hugo](https://gohugo.io/installation/) installed on your machine.
 
-## Files Structure
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/chayev/lifelabnepal.com.git
+   cd landingpage
+   ```
 
-- `index.html` - Main HTML file
-- `styles.css` - All CSS styles
-- `script.js` - JavaScript functionality
-- `README.md` - This documentation
+2. **Start the development server**:
+   ```bash
+   hugo server -D
+   ```
+   The site will be available at `http://localhost:1313/`.
 
-## Customization
+## Project Structure
 
-### Calendly Link
-Update the Calendly URL in `script.js`:
-```javascript
-function openCalendly() {
-    window.open('https://calendly.com/your-calendly-username', '_blank');
-}
+- `content/`: Markdown files for all pages and journal entries.
+- `layouts/`: HTML templates for the site structure.
+  - `partials/`: Reusable components (header, footer, head).
+- `static/`: Static assets such as images, CSS, and vanilla JavaScript.
+  - `styles.css`: Core "Quiet Luxury" design system.
+  - `script.js`: Interactive elements (FAQ accordion, mobile menu toggle).
+- `hugo.toml`: Main site configuration.
+
+## Content Management
+
+### Journal Entries
+New journals can be added as markdown files in `content/journals/`. Each entry should include frontmatter for metadata:
+```yaml
+---
+title: "The Quiet Morning"
+date: 2024-04-10
+draft: false
+---
+Your content goes here...
 ```
 
-### Contact Form
-The contact form currently logs data to the console. To make it functional, you'll need to:
-1. Set up a form handling service (like Formspree, Netlify Forms, or EmailJS)
-2. Update the form submission handler in `script.js`
+### Main Pages
+Key philosophical pages like "Who This Is For" and "Why Nepal" are located in the `content/` root.
 
-### Background Images
-Replace the Unsplash URLs in `styles.css` with your own images if desired.
+## Deployment
 
-### Content
-Update placeholders in `index.html`:
-- Replace Prateek's bio placeholder with actual content
-- Add real testimonials
-- Update any other placeholder content
-
-## Browser Support
-
-This website works in all modern browsers including:
-- Chrome/Chromium
-- Firefox
-- Safari
-- Edge
-
-## Performance
-
-The website is optimized for performance with:
-- Minimal external dependencies
-- Optimized images from Unsplash
-- Efficient CSS and JavaScript
-- Google Fonts with font-display: swap
+This site is automatically deployed to GitHub Pages via the `.github/workflows/gh-pages.yml` workflow whenever changes are pushed to the `main` branch.
 
 ## Contact
 
-For questions about this website, please contact Prateek Neupane through the contact form or Calendly booking.
+For questions about LifeLAB Nepal or this website, please contact Prateek Neupane.
