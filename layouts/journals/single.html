@@ -7,9 +7,6 @@
     <div class="hero-content fade-in-up mt-large" style="padding-top: 4rem;">
         <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">Journal Entry</span>
         <h1 class="hero-title" style="color: var(--color-ivory);">{{ .Title }}</h1>
-        <p class="hero-subtitle" style="font-size: 1.1rem; opacity: 0.85; font-style: italic;">
-            {{ .Date.Format "January 2, 2006" }}
-        </p>
     </div>
 </section>
 {{ end }}
@@ -20,7 +17,6 @@
         <div style="margin-bottom: 3rem; text-align: center;">
             <span class="hero-kicker" style="border-color: var(--color-stone); color: var(--color-text-muted);">Journal Entry</span>
             <h1 class="serif-title" style="font-size: 3rem; margin-top: 1rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Title }}</h1>
-            <p style="color: var(--color-text-muted); font-size: 1.1rem; font-style: italic;">{{ .Date.Format "January 2, 2006" }}</p>
         </div>
         {{ end }}
         
