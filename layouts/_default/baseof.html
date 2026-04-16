@@ -29,7 +29,8 @@
         {{ partial "footer.html" . }}
     {{ end }}
     
-    <script src="{{ "script.js" | relURL }}"></script>
+    {{ $script := resources.Get "script.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}"></script>
     {{ block "scripts" . }}{{ end }}
 </body>
 </html>

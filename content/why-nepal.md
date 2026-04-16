@@ -10,10 +10,7 @@ Nepal does — quietly, almost without trying.
 
 This intimate Himalayan journey is not about traveling far. It is about entering a different relationship with time, space, and attention. And Nepal naturally invites that shift. Generally, a place is defined by its people, and Nepal is widely renowned for friendly, charming individuals who make authentic human connections possible.
 
-<div class="editorial-image-container">
-    <img src="/images/himalayan-valley-river.png" alt="Himalayan Valley and River" class="editorial-image">
-    <p class="image-caption">The unhurried flow of a Himalayan valley, where the landscape sets the pace.</p>
-</div>
+{{< img src="/images/himalayan-valley-river.png" alt="Himalayan Valley and River" caption="The unhurried flow of a Himalayan valley, where the landscape sets the pace." >}}
 
 ### A Different Relationship with Time
 
@@ -29,12 +26,10 @@ Reflection does not happen because we force it. It happens when time stops pushi
 
 <div class="image-grid">
     <div class="grid-item">
-        <img src="/images/nepal-architecture.png" alt="Traditional Nepal Architecture" class="editorial-image">
-        <p class="image-caption">Intricate stories carved into wood and brick.</p>
+        {{< img src="/images/nepal-architecture.png" alt="Traditional Nepal Architecture" caption="Intricate stories carved into wood and brick." >}}
     </div>
     <div class="grid-item">
-        <img src="/images/mountain-road.png" alt="Winding Mountain Road" class="editorial-image">
-        <p class="image-caption">A road that asks you to look outward as you move inward.</p>
+        {{< img src="/images/mountain-road.png" alt="Winding Mountain Road" caption="A road that asks you to look outward as you move inward." >}}
     </div>
 </div>
 
@@ -46,10 +41,7 @@ In the Himalayas, scale changes your inner dialogue. Problems that felt urgent b
 
 Many guests notice this without knowing why: they begin speaking more slowly, listening more deeply, needing less explanation. The mountains do not solve your questions. They make room for them.
 
-<div class="editorial-image-container breakout">
-    <img src="/images/himalayan-peaks.png" alt="Majestic Himalayan Peaks" class="editorial-image">
-    <p class="image-caption">Immense silence held by the highest peaks on earth.</p>
-</div>
+{{< img src="/images/himalayan-peaks.png" alt="Majestic Himalayan Peaks" caption="Immense silence held by the highest peaks on earth." class="editorial-image breakout" >}}
 
 ### Slowness as a Way of Seeing
 
@@ -65,19 +57,13 @@ We travel not as tourists moving rapidly through scenery, but as guests moving g
 
 They are no longer trying to become someone else. They are simply returning to themselves.
 
-<div class="editorial-image-container">
-    <img src="/images/nepal-hospitality.png" alt="Nepali Hospitality" class="editorial-image">
-    <p class="image-caption">Hospitality that feels like a shared breath, quiet and sincere.</p>
-</div>
+{{< img src="/images/nepal-hospitality.png" alt="Nepali Hospitality" caption="Hospitality that feels like a shared breath, quiet and sincere." >}}
 
 ### The Sensory Experience
 
 Beyond the silence and the scale, Nepal is felt in the senses. The smell of woodsmoke and cedar. The taste of a shared meal that arrived without haste. The tactile warmth of a copper cup of tea.
 
-<div class="editorial-image-container">
-    <img src="/images/dal-bhat.png" alt="Traditional Nepali Dal Bhat" class="editorial-image">
-    <p class="image-caption">Dal Bhat — nourishment refined to its essentials.</p>
-</div>
+{{< img src="/images/dal-bhat.png" alt="Traditional Nepali Dal Bhat" caption="Dal Bhat — nourishment refined to its essentials." >}}
 
 ### Why Reflection Happens Here
 

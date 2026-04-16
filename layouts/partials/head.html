@@ -3,7 +3,8 @@
 <title>{{ if .IsHome }}{{ .Site.Title }} – Reflective Travel{{ else }}{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="Becoming Human  -  A Reflective Journey in the Nepali Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
 
-<link rel="stylesheet" href="{{ "styles.css?v=" | relURL }}{{ now.Unix }}">
+{{ $styles := resources.Get "styles.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">

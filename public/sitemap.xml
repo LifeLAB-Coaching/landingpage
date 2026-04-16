@@ -3,20 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/journals/</loc>
-    <lastmod>2026-04-08T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-08T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/journals/whycation/</loc>
+    <lastmod>2026-04-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/journals/first-entry/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/apply/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/conversations/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/who-this-is-for/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/why-nepal/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

@@ -1,0 +1,18 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $class := .Get "class" | default "editorial-image" -}}
+
+{{- $image := resources.GetMatch (printf "images/%s" (path.Base $src)) -}}
+
+<div class="editorial-image-container">
+    {{- if $image -}}
+        {{- $webp := $image.Resize "1600x webp q80" -}}
+        <img src="{{ $webp.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+    {{- else -}}
+        <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+    {{- end -}}
+    {{- if $caption -}}
+        <p class="image-caption">{{ $caption }}</p>
+    {{- end -}}
+</div>

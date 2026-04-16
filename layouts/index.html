@@ -1,8 +1,13 @@
 {{ define "main" }}
 <!-- Premium Hero -->
 <section class="hero cinematic-hero">
-    <div class="hero-bg" style="background-image: url('/images/hero-image.jpeg');">
-    </div>
+    {{ $hero := resources.Get "images/hero-image.jpeg" }}
+    {{ if $hero }}
+        {{ $heroWebp := $hero.Resize "2000x webp q85" }}
+        <div class="hero-bg" style="background-image: url('{{ $heroWebp.RelPermalink }}');"></div>
+    {{ else }}
+        <div class="hero-bg" style="background-image: url('/images/hero-image.jpeg');"></div>
+    {{ end }}
     <div class="hero-overlay-dark"></div>
     <div class="hero-content fade-in-up">
         <span class="hero-kicker">Limited to up to 3 participants</span>
@@ -93,7 +98,13 @@
     <div class="container">
         <div class="split-layout">
             <div class="split-image fade-in-up">
-                <img src='{{ "reflective-journey.jpeg" | relURL }}' alt="Reflective Journey">
+                {{ $journeyImage := resources.Get "images/reflective-journey.jpeg" }}
+                {{ if $journeyImage }}
+                    {{ $journeyWebp := $journeyImage.Resize "1200x webp q80" }}
+                    <img src="{{ $journeyWebp.RelPermalink }}" alt="Reflective Journey" loading="lazy">
+                {{ else }}
+                    <img src='{{ "reflective-journey.jpeg" | relURL }}' alt="Reflective Journey" loading="lazy">
+                {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
                 <h2 class="section-title">The Reflective Journey</h2>
@@ -136,8 +147,15 @@
     <div class="container">
         <div class="split-layout reverse">
             <div class="split-image fade-in-up">
-                <img src='{{ "Prateek.jpg" | relURL }}' alt="Prateek Raj Neupane"
-                    style="filter: grayscale(20%) contrast(110%);">
+                {{ $prateek := resources.Get "images/Prateek.jpg" }}
+                {{ if $prateek }}
+                    {{ $prateekWebp := $prateek.Resize "1200x webp q85" }}
+                    <img src="{{ $prateekWebp.RelPermalink }}" alt="Prateek Raj Neupane"
+                        style="filter: grayscale(20%) contrast(110%);" loading="lazy">
+                {{ else }}
+                    <img src='{{ "Prateek.jpg" | relURL }}' alt="Prateek Raj Neupane"
+                        style="filter: grayscale(20%) contrast(110%);" loading="lazy">
+                {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
                 <h2 class="section-title">Your Host, Prateek</h2>

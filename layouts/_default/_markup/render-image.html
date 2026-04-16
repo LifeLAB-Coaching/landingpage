@@ -1,0 +1,20 @@
+{{- $image := .Page.Resources.GetMatch .Destination -}}
+{{- if not $image -}}
+  {{- $image = resources.GetMatch .Destination -}}
+{{- end -}}
+
+{{- if $image -}}
+  {{- $webp := $image.Resize "1600x webp q80" -}}
+  <figure class="editorial-figure">
+    <img src="{{ $webp.RelPermalink }}" 
+         alt="{{ .Text }}" 
+         title="{{ .Title }}" 
+         loading="lazy" 
+         class="editorial-image">
+    {{- if .Text -}}
+      <figcaption class="image-caption">{{ .Text }}</figcaption>
+    {{- end -}}
+  </figure>
+{{- else -}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" class="editorial-image">
+{{- end -}}

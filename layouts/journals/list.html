@@ -13,7 +13,13 @@
             <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block;" class="format-card fade-in-up">
                 {{ if .Params.photo }}
                 <div style="border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 4/3;">
-                    <img src="{{ .Params.photo | relURL }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    {{ $photo := resources.Get (printf "images/%s" (path.Base .Params.photo)) }}
+                    {{ if $photo }}
+                        {{ $thumb := $photo.Fill "800x600 webp q80" }}
+                        <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" loading="lazy">
+                    {{ else }}
+                        <img src="{{ .Params.photo | relURL }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" loading="lazy">
+                    {{ end }}
                 </div>
                 {{ end }}
                 <h2 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Title }}</h2>

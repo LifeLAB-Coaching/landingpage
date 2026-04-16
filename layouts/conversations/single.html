@@ -15,7 +15,6 @@
     .sessions-bg {
         position: absolute;
         inset: 0;
-        background-image: url('/images/sessions-top.jpg');
         background-size: cover;
         background-position: center;
         z-index: -2;
@@ -85,7 +84,13 @@
 
 {{ define "main" }}
 <section class="sessions-hero pt-0">
-    <div class="sessions-bg"></div>
+    {{ $bg := resources.Get "images/sessions-top.jpg" }}
+    {{ if $bg }}
+        {{ $bgWebp := $bg.Resize "2000x webp q80" }}
+        <div class="sessions-bg" style="background-image: url('{{ $bgWebp.RelPermalink }}');"></div>
+    {{ else }}
+        <div class="sessions-bg" style="background-image: url('/images/sessions-top.jpg');"></div>
+    {{ end }}
     <div class="sessions-overlay"></div>
     <div class="sessions-hero-content fade-in-up">
         <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">For 1:1 Conversations</span>
@@ -141,7 +146,13 @@
 <!-- Image Break -->
 <section class="section pt-0 pb-0">
     <div class="container fade-in-up">
-        <img src="/images/sessions-bottom.jpg" alt="LifeLAB Sessions" class="image-banner mt-0">
+        {{ $banner := resources.Get "images/sessions-bottom.jpg" }}
+        {{ if $banner }}
+            {{ $bannerWebp := $banner.Resize "1600x webp q80" }}
+            <img src="{{ $bannerWebp.RelPermalink }}" alt="LifeLAB Sessions" class="image-banner mt-0" loading="lazy">
+        {{ else }}
+            <img src="/images/sessions-bottom.jpg" alt="LifeLAB Sessions" class="image-banner mt-0" loading="lazy">
+        {{ end }}
     </div>
 </section>
 
@@ -149,8 +160,15 @@
     <div class="container">
         <div class="split-layout">
             <div class="split-image fade-in-up">
-                <img src="{{ "Prateek.jpg" | relURL }}" alt="Prateek"
-                    style="filter: grayscale(20%); aspect-ratio: 4/5; object-fit: cover;">
+                {{ $prateek := resources.Get "images/Prateek.jpg" }}
+                {{ if $prateek }}
+                    {{ $prateekWebp := $prateek.Resize "1000x webp q85" }}
+                    <img src="{{ $prateekWebp.RelPermalink }}" alt="Prateek"
+                        style="filter: grayscale(20%); width: 100%; height: auto;" loading="lazy">
+                {{ else }}
+                    <img src="{{ "Prateek.jpg" | relURL }}" alt="Prateek"
+                        style="filter: grayscale(20%); width: 100%; height: auto;" loading="lazy">
+                {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
                 <h2 class="section-title">About Prateek</h2>

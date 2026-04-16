@@ -1,8 +1,13 @@
 {{ define "main" }}
 {{ if .Params.photo }}
 <section class="hero cinematic-hero" style="min-height: 70vh;">
-    <div class="hero-bg" style="background-image: url('{{ .Params.photo | relURL }}');">
-    </div>
+    {{ $photo := resources.Get (printf "images/%s" (path.Base .Params.photo)) }}
+    {{ if $photo }}
+        {{ $photoWebp := $photo.Resize "2000x webp q85" }}
+        <div class="hero-bg" style="background-image: url('{{ $photoWebp.RelPermalink }}');"></div>
+    {{ else }}
+        <div class="hero-bg" style="background-image: url('{{ .Params.photo | relURL }}');"></div>
+    {{ end }}
     <div class="hero-overlay-dark"></div>
     <div class="hero-content fade-in-up mt-large" style="padding-top: 4rem;">
         <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">Journal Entry</span>
