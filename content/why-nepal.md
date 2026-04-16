@@ -1,6 +1,6 @@
 ---
 title: "Why Nepal"
-subtitle: "A place where time behaves differently and silence is a presence, not an absence."
+subtitle: "A place where time flows differently, nature is awe-inspiring, and hospitality is felt in small, unspoken gestures."
 body_class: "dark-nav-page"
 ---
 
@@ -9,6 +9,11 @@ There are many beautiful places in the world. But not every place allows you to 
 Nepal does — quietly, almost without trying.
 
 This intimate Himalayan journey is not about traveling far. It is about entering a different relationship with time, space, and attention. And Nepal naturally invites that shift. Generally, a place is defined by its people, and Nepal is widely renowned for friendly, charming individuals who make authentic human connections possible.
+
+<div class="editorial-image-container">
+    <img src="/images/himalayan-valley-river.png" alt="Himalayan Valley and River" class="editorial-image">
+    <p class="image-caption">The unhurried flow of a Himalayan valley, where the landscape sets the pace.</p>
+</div>
 
 ### A Different Relationship with Time
 
@@ -22,6 +27,17 @@ You begin to notice how much of your life has been measured rather than lived. D
 
 Reflection does not happen because we force it. It happens when time stops pushing us forward.
 
+<div class="image-grid">
+    <div class="grid-item">
+        <img src="/images/nepal-architecture.png" alt="Traditional Nepal Architecture" class="editorial-image">
+        <p class="image-caption">Intricate stories carved into wood and brick.</p>
+    </div>
+    <div class="grid-item">
+        <img src="/images/mountain-road.png" alt="Winding Mountain Road" class="editorial-image">
+        <p class="image-caption">A road that asks you to look outward as you move inward.</p>
+    </div>
+</div>
+
 ### Mountains and Psychological Space
 
 Mountains do something subtle to the human mind. They do not demand attention. They simply remain.
@@ -29,6 +45,11 @@ Mountains do something subtle to the human mind. They do not demand attention. T
 In the Himalayas, scale changes your inner dialogue. Problems that felt urgent begin to loosen. Thoughts slow down, not because you try to meditate, but because the landscape itself holds an immense silence. There is space between sounds. Space between conversations. Space even between thoughts.
 
 Many guests notice this without knowing why: they begin speaking more slowly, listening more deeply, needing less explanation. The mountains do not solve your questions. They make room for them.
+
+<div class="editorial-image-container breakout">
+    <img src="/images/himalayan-peaks.png" alt="Majestic Himalayan Peaks" class="editorial-image">
+    <p class="image-caption">Immense silence held by the highest peaks on earth.</p>
+</div>
 
 ### Slowness as a Way of Seeing
 
@@ -43,6 +64,20 @@ Hosting this journey is not about showing Nepal as a static destination. It is a
 We travel not as tourists moving rapidly through scenery, but as guests moving gracefully through lived spaces — villages, roads, kitchens, conversations. And somewhere along the way, surrounded by this quiet luxury travel Nepal provides intuitively, many people notice something unexpected:
 
 They are no longer trying to become someone else. They are simply returning to themselves.
+
+<div class="editorial-image-container">
+    <img src="/images/nepal-hospitality.png" alt="Nepali Hospitality" class="editorial-image">
+    <p class="image-caption">Hospitality that feels like a shared breath, quiet and sincere.</p>
+</div>
+
+### The Sensory Experience
+
+Beyond the silence and the scale, Nepal is felt in the senses. The smell of woodsmoke and cedar. The taste of a shared meal that arrived without haste. The tactile warmth of a copper cup of tea.
+
+<div class="editorial-image-container">
+    <img src="/images/dal-bhat.png" alt="Traditional Nepali Dal Bhat" class="editorial-image">
+    <p class="image-caption">Dal Bhat — nourishment refined to its essentials.</p>
+</div>
 
 ### Why Reflection Happens Here
 

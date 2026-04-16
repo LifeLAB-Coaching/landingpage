@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }} – Reflective Travel{{ else }}{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="Becoming Human  -  A Reflective Journey in the Nepali Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
 
 <link rel="stylesheet" href="{{ "styles.css?v=" | relURL }}{{ now.Unix }}">

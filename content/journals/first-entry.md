@@ -1,7 +1,7 @@
 ---
 title: "Things I would share with my daughter"
 date: 2026-04-08
-photo: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2560&q=80"
+photo: "/images/journal-spirit.png"
 ---
 
 Dear chhori (daughter in Nepali),

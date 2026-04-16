@@ -519,13 +519,66 @@ a {
 }
 
 .faq-answer.open {
-    max-height: 500px;
-    padding-bottom: 1.5rem;
+    max-height: 1000px;
+    padding-bottom: 2rem;
 }
 
 .faq-answer p {
     color: var(--color-text-muted);
     font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Editorial Content Images */
+.editorial-image-container {
+    margin: 4rem 0;
+    width: 100%;
+}
+
+.editorial-image-container.breakout {
+    margin-left: -15%;
+    width: 130%;
+}
+
+@media (max-width: 1200px) {
+    .editorial-image-container.breakout {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.editorial-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Apply Form */

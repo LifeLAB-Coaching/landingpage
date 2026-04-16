@@ -15,7 +15,7 @@
     .sessions-bg {
         position: absolute;
         inset: 0;
-        background-image: url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=2560&q=80');
+        background-image: url('/images/sessions-top.jpg');
         background-size: cover;
         background-position: center;
         z-index: -2;
@@ -90,7 +90,7 @@
             <a href="#about" class="back-link">Philosophy</a>
             <a href="#founder" class="back-link">About Prateek</a>
             <a href="#book" class="back-link">Request a Session</a>
-            <a href="{{ "/" | relURL }}" class="nav-apply">Return to Reflective Journeys</a>
+            <a href="{{ "/" | relURL }}" class="nav-apply">Return to Reflective Journey</a>
         </nav>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
             <span></span>
@@ -159,8 +159,8 @@
 <!-- Image Break -->
 <section class="section pt-0 pb-0">
     <div class="container fade-in-up">
-        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=2560&q=80"
-            alt="Swayambhunath" class="image-banner">
+        <img src="/images/sessions-bottom.jpg"
+            alt="LifeLAB Sessions" class="image-banner">
     </div>
 </section>
 
@@ -226,7 +226,7 @@
 <footer class="footer">
     <div class="container footer-content">
         <div class="footer-brand">
-            <h3 class="footer-title">LifeLAB Coaching</h3>
+            <h3 class="footer-title">LifeLAB Conversations</h3>
             <p>with Prateek Raj Neupane</p>
         </div>
         <div class="footer-links">
@@ -278,49 +278,7 @@
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0 }); // Consistency with global fix
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-
-    const header = document.querySelector('.header');
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    if (mobileMenuToggle && nav) {
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('nav-open');
-            nav.classList.toggle('nav-open');
-            document.body.style.overflow = nav.classList.contains('nav-open') ? 'hidden' : '';
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('nav-open');
-                nav.classList.remove('nav-open');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Back to top
-    const backToTop = document.getElementById('back-to-top');
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 150) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
 </script>
 {{ end }}

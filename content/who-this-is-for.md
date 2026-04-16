@@ -10,8 +10,6 @@ Thoughtful professionals who have achieved things, but quietly wonder what all o
 
 It is for those seeking pause, presence, and honest conversation - not escape, distraction, or self-improvement promises.
 
-<br>
-
 > Sometimes guests arrive with a simple feeling:  
 > "Life feels like a stage… and I’m no longer sure whether I’m acting or living."
 
