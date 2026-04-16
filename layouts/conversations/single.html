@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LifeLAB Sessions - LifeLAB Nepal</title>
-<meta name="description" content="Becoming Human  -  A Reflective Journey in the Nepali Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
-
-<link rel="stylesheet" href="/styles.css?v=1776334504">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-    
+{{ define "extra_head" }}
 <style>
     .sessions-hero {
         height: 60vh;
@@ -93,47 +80,25 @@
         }
     }
 </style>
+{{ end }}
 
-</head>
-<body class="bg-ivory ">
-    
-        
-<header class="header">
-    <div class="header-container">
-        <a href="/" class="logo">LifeLAB Nepal</a>
-        <nav class="nav">
-            <a href="#about" class="back-link">Philosophy</a>
-            <a href="#founder" class="back-link">About Prateek</a>
-            <a href="#book" class="back-link">Request a Session</a>
-            <a href="/" class="nav-apply">Return to Reflective Journey</a>
-        </nav>
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
 
-    
-
-    <main class="">
-        
+{{ define "main" }}
 <section class="sessions-hero pt-0">
     <div class="sessions-bg"></div>
     <div class="sessions-overlay"></div>
     <div class="sessions-hero-content fade-in-up">
-        <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">For Locals & Residents</span>
-        <h1 class="hero-title pt-0" style="color: var(--color-ivory);">LifeLAB Sessions</h1>
+        <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">For 1:1 Conversations</span>
+        <h1 class="hero-title pt-0" style="color: var(--color-ivory);">Conversations</h1>
         <p class="hero-subtitle">"Life is a story. Living is in the now. You can always edit the script."</p>
         <div class="hero-actions">
-            <a href="#book" class="btn-primary">Request a Session</a>
+            <a href="#book" class="btn-primary">Request a Conversation</a>
         </div>
     </div>
 </section>
 
-
-<section class="section" id="about">
+<!-- The Format -->
+<section class="section pb-0" id="about">
     <div class="container text-center fade-in-up">
         <h2 class="serif-title mb-large" style="font-size: 2.8rem;">A space to slow down, breathe, and reflect.
         </h2>
@@ -144,40 +109,39 @@
             pace and depth.
         </p>
 
-        <div class="format-grid">
-            <div class="format-card fade-in-up delay-1">
-                <div class="format-number">01</div>
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Deep Listening</h3>
-                <p class="body-text" style="margin-bottom: 0;">I listen deeply to what you're saying - and what
-                    you're not saying - acting as a sounding mirror for your thoughts.</p>
+        <div class="intro-content"
+            style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="fade-in-up delay-1" style="margin-bottom: 3rem;">
+                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">Deep
+                    Listening</h3>
+                <p class="body-text">In a world that rarely stops to hear, these conversations are anchored in deep,
+                    quiet attention. I act as a sounding mirror for your thoughts—listening not just to what is said,
+                    but to the spaces in between.</p>
             </div>
-            <div class="format-card fade-in-up delay-1">
-                <div class="format-number">02</div>
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">New Perspectives</h3>
-                <p class="body-text" style="margin-bottom: 0;">Together, we'll share insights and questions that
-                    may shift your perspective and break old unhelpful patterns.</p>
+
+            <div class="fade-in-up delay-1" style="margin-bottom: 3rem;">
+                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">New
+                    Perspectives</h3>
+                <p class="body-text">Together, we share insights and questions that shift the horizon. We look at the
+                    patterns that no longer serve you and explore the possibilities that arise when we stop trying to
+                    manage everything.</p>
             </div>
-            <div class="format-card fade-in-up delay-1">
-                <div class="format-number">03</div>
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Quiet Exploration</h3>
-                <p class="body-text" style="margin-bottom: 0;">We explore the profound question: "Who am I,
-                    beyond all these roles and expectations?" in a safe space.</p>
-            </div>
-            <div class="format-card fade-in-up delay-1">
-                <div class="format-number">04</div>
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Organic Flow</h3>
-                <p class="body-text" style="margin-bottom: 0;">We might talk, sit in silence, meditate, or
-                    write - whatever arises organically in the moment.</p>
+
+            <div class="fade-in-up delay-1" style="margin-bottom: 0;">
+                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">
+                    Organic Flow</h3>
+                <p class="body-text">There is no rigid curriculum. We might talk, sit in silence, or simply observe the
+                    world around us. The conversation follows what is alive in you in the moment, allowing clarity to
+                    emerge naturally.</p>
             </div>
         </div>
     </div>
 </section>
 
-
+<!-- Image Break -->
 <section class="section pt-0 pb-0">
     <div class="container fade-in-up">
-        <img src="/images/sessions-bottom.jpg"
-            alt="LifeLAB Sessions" class="image-banner">
+        <img src="/images/sessions-bottom.jpg" alt="LifeLAB Sessions" class="image-banner mt-0">
     </div>
 </section>
 
@@ -185,7 +149,7 @@
     <div class="container">
         <div class="split-layout">
             <div class="split-image fade-in-up">
-                <img src="/Prateek.jpg" alt="Prateek"
+                <img src="{{ "Prateek.jpg" | relURL }}" alt="Prateek"
                     style="filter: grayscale(20%); aspect-ratio: 4/5; object-fit: cover;">
             </div>
             <div class="split-content fade-in-up delay-1">
@@ -213,7 +177,7 @@
     <div class="container narrow-container fade-in-up">
         <div class="form-wrapper" style="margin-top: 0; padding: 4rem 3rem;">
             <div class="text-center mb-large">
-                <h2 class="serif-title" style="font-size: 2.5rem;">Request a Session</h2>
+                <h2 class="serif-title" style="font-size: 2.5rem;">Request a Conversation</h2>
                 <p class="body-text">Fill out the form below to begin a conversation.</p>
             </div>
             <form class="premium-form" id="session-form" action="https://formspree.io/f/mgvykony" method="POST">
@@ -231,40 +195,18 @@
                         placeholder="Tell me about your current crossroads, or what you're seeking to explore..."></textarea>
                 </div>
                 <div class="form-actions mt-medium text-center">
-                    <button type="submit" class="btn-primary" style="width: 100%;">Send Request</button>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Request a Conversation</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
+{{ end }}
 
-    </main>
 
-    
-        
-<footer class="footer">
-    <div class="container footer-content">
-        <div class="footer-brand">
-            <h3 class="footer-title">LifeLAB Conversations</h3>
-            <p>with Prateek Raj Neupane</p>
-        </div>
-        <div class="footer-links">
-            <a href="/">The Reflective Journey</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 LifeLAB Nepal. All rights reserved.</p>
-    </div>
-</footer>
-
-<button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
-
-    
-    
-    <script src="/script.js"></script>
-    
+{{ define "scripts" }}
 <script>
-    
+    // Form submission
     const sessionForm = document.getElementById('session-form');
     if (sessionForm) {
         sessionForm.addEventListener('submit', async function (e) {
@@ -281,7 +223,7 @@
                 });
 
                 if (response.ok) {
-                    sessionForm.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title" style="font-size: 2rem; color: var(--color-forest); margin-bottom: 1rem;">Message Sent</h3><p class="body-text">Thank you. Prateek will get back to you shortly.</p></div>';
+                    sessionForm.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title" style="font-size: 2rem; color: var(--color-forest); margin-bottom: 1rem;">Message Sent</h3><p class="body-text">Thank you. Prateek will get back to you shortly to schedule our conversation.</p></div>';
                 } else {
                     btn.textContent = 'Error. Try again.';
                     btn.disabled = false;
@@ -299,9 +241,7 @@
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0 }); 
+    }, { threshold: 0 }); // Consistency with global fix
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 </script>
-
-</body>
-</html>
+{{ end }}
