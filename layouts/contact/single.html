@@ -83,19 +83,18 @@
 <section class="section contact-section" style="padding-top: 9rem;">
     <div class="container fade-in-up">
         <div class="contact-header text-center mb-large">
-            <h1 class="serif-title" style="font-size: 3.2rem; margin-bottom: 1rem;">Contact</h1>
+            <h1 class="serif-title" style="font-size: 3.2rem; margin-bottom: 1rem;">{{ .Site.Params.contact.title | default "Contact" }}</h1>
             <p class="body-text large-text" style="max-width: 70ch; margin: 0 auto;">
-                Have questions about the journey, feedback on the book, or simply want to send a general message? Fill
-                out the form below.
+                {{ .Site.Params.contact.description | default "Have questions about the journey, feedback on the book, or simply want to send a general message? Fill out the form below." }}
             </p>
         </div>
 
         <div class="contact-container">
             <!-- Left Column: Form -->
             <div class="contact-column">
-                <h2 class="sidebar-header">Send a Message</h2>
+                <h2 class="sidebar-header">{{ .Site.Params.contact.form_title | default "Send a Message" }}</h2>
                 <div class="form-wrapper" style="margin-top: 1.75rem; padding: 3.5rem;">
-                    <form class="premium-form" id="contact-form" action="https://formspree.io/f/xjgzradl" method="POST">
+                    <form class="premium-form" id="contact-form" action="https://formspree.io/f/{{ .Site.Params.contact.formspree_endpoint | default "xjgzradl" }}" method="POST">
                         <input type="hidden" name="_subject" value="New General Contact Message">
                         <input type="hidden" name="Form Submitted" value="General Contact Form">
                         <div class="form-group">
@@ -116,7 +115,7 @@
                         </div>
 
                         <div class="form-actions mt-large">
-                            <button type="submit" class="btn-primary block" style="width: 100%;">Send Message</button>
+                            <button type="submit" class="btn-primary block" style="width: 100%;">{{ .Site.Params.contact.button_text | default "Send Message" }}</button>
                         </div>
                     </form>
                 </div>
@@ -124,38 +123,57 @@
 
             <!-- Right Column: Sidebar links to other forms -->
             <div class="contact-sidebar">
-                <h2 class="sidebar-header">Specific Inquiries</h2>
+                <h2 class="sidebar-header">{{ .Site.Params.contact.sidebar.title | default "Specific Inquiries" }}</h2>
 
-                <div class="sidebar-card">
-                    <h3>Apply for the Why-cation</h3>
-                    <p>Ready to leave schedules behind and enter stillness? Submit an application for the 5-10 day
-                        reflective journey in the Nepali Himalayas.</p>
-                    <a href="/apply/" class="sidebar-link">
-                        Begin Application <span>&rarr;</span>
-                    </a>
-                </div>
+                {{ if .Site.Params.contact.sidebar.cards }}
+                    {{ range .Site.Params.contact.sidebar.cards }}
+                        <div class="sidebar-card">
+                            <h3>{{ .title }}</h3>
+                            <p>{{ .description }}</p>
+                            <a href="{{ .link_url }}" class="sidebar-link">
+                                {{ .link_text }} <span>&rarr;</span>
+                            </a>
+                        </div>
+                    {{ end }}
+                {{ else }}
+                    <div class="sidebar-card">
+                        <h3>Apply for the Why-cation</h3>
+                        <p>Ready to leave schedules behind and enter stillness? Submit an application for the 5-10 day reflective journey in the Nepali Himalayas.</p>
+                        <a href="/apply/" class="sidebar-link">
+                            Begin Application <span>&rarr;</span>
+                        </a>
+                    </div>
 
-                <div class="sidebar-card">
-                    <h3>Request a Conversation</h3>
-                    <p>Seek a structured 1:1 reflection session with Prateek about transitions, philosophy, or personal
-                        direction in a quiet, listening space.</p>
-                    <a href="/conversations/#book" class="sidebar-link">
-                        Request Conversation <span>&rarr;</span>
-                    </a>
-                </div>
+                    <div class="sidebar-card">
+                        <h3>Request a Conversation</h3>
+                        <p>Seek a structured 1:1 reflection session with Prateek about transitions, philosophy, or personal direction in a quiet, listening space.</p>
+                        <a href="/conversations/#book" class="sidebar-link">
+                            Request Conversation <span>&rarr;</span>
+                        </a>
+                    </div>
 
-                <div class="sidebar-card">
-                    <h3>Request "How You Happen"</h3>
-                    <p>Exhausted by constant optimization? Request a printed galley or digital copy of Prateek's
-                        anti-self-help book.</p>
-                    <a href="/book/" class="sidebar-link">
-                        Request Book <span>&rarr;</span>
-                    </a>
-                </div>
+                    <div class="sidebar-card">
+                        <h3>Request "How You Happen"</h3>
+                        <p>Exhausted by constant optimization? Request a printed galley or digital copy of Prateek's anti-self-help book.</p>
+                        <a href="/book/" class="sidebar-link">
+                            Request Book <span>&rarr;</span>
+                        </a>
+                    </div>
+                {{ end }}
             </div>
         </div>
     </div>
 </section>
+
+<!-- Success HTML storage for AJAX -->
+<div id="contact-success-content" style="display: none;">
+    {{ .Site.Params.contact.success_html | default `
+    <div class="text-center" style="padding: 3rem 0;">
+        <h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3>
+        <p class="body-text large-text">Thank you. Prateek has received your message and will get back to you shortly.</p>
+    </div>
+    ` | safeHTML }}
+</div>
 {{ end }}
 
 {{ define "scripts" }}
@@ -177,7 +195,15 @@
                 });
 
                 if (response.ok) {
-                    contactForm.innerHTML = '<div class="text-center" style="padding: 3rem 0;"><h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3><p class="body-text large-text">Thank you. Prateek has received your message and will get back to you shortly.</p></div>';
+                    const container = contactForm.closest('.form-wrapper') || contactForm;
+                    const successHtml = document.getElementById('contact-success-content').innerHTML;
+                    container.innerHTML = successHtml;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'form_complete', {
+                            'form_id': 'contact-form',
+                            'form_name': 'General Contact Form'
+                        });
+                    }
                 } else {
                     btn.textContent = 'Error. Try again.';
                     btn.disabled = false;

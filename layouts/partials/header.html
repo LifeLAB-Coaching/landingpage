@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header-container">
-        <a href='{{ "/" | relURL }}' class="logo">LifeLAB Nepal</a>
+        <a href='{{ "/" | relURL }}' class="logo">{{ .Site.Params.site.logo_text | default "LifeLAB Nepal" }}</a>
         <nav class="nav">
             <div class="nav-dropdown">
                 <a href="/#intro">The Invitation <svg width="12" height="12" viewBox="0 0 24 24" fill="none"

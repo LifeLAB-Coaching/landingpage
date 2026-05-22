@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="container footer-content">
         <div class="footer-brand">
-            <h3 class="footer-title">LifeLAB Nepal</h3>
-            <p>A quiet space in the Himalayas.</p>
+            <h3 class="footer-title">{{ .Site.Params.site.footer_brand_title | default "LifeLAB Nepal" }}</h3>
+            <p>{{ .Site.Params.site.footer_brand_subtitle | default "A quiet space in the Himalayas." }}</p>
         </div>
         <div class="footer-links" style="flex-wrap: wrap;">
             <a href="/who-this-is-for/">Who This Is For</a>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 LifeLAB Nepal. All rights reserved. Kathmandu, Nepal.</p>
+        <p>{{ .Site.Params.site.footer_copyright | default "&copy; 2026 LifeLAB Nepal. All rights reserved. Kathmandu, Nepal." | safeHTML }}</p>
     </div>
 </footer>
 

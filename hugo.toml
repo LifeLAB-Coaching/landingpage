@@ -5,10 +5,429 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [markup]
   [markup.goldmark]
-    [markup.goldmark.renderer]
+    [goldmark.renderer]
       unsafe = true
 
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
+
+[params]
+  [params.site]
+    logo_text = "LifeLAB Nepal"
+    footer_brand_title = "LifeLAB Nepal"
+    footer_brand_subtitle = "A quiet space in the Himalayas."
+    footer_copyright = "&copy; 2026 LifeLAB Nepal. All rights reserved. Kathmandu, Nepal."
+
+  testimonials_title = "What people say"
+  faq_title = "Frequently Asked Questions"
+
+  # =========================================================================
+  # HOMEPAGE CONFIGURATION
+  # =========================================================================
+
+  [params.hero]
+    kicker = "Limited to up to 3 participants"
+    title = "Why-cation"
+    subtitle = "<i> An intimate and private reflective travel experience in Nepal for thoughtful individuals seeking clarity, rest, reflection space, and reconnection with their authentic self.</i>"
+    cta_text = "Begin the Journey"
+    scroll_text = "Scroll to explore"
+
+  [params.intro]
+    title = "Travel, Reflect, and Have Fun"
+    paragraphs = [
+      "You don’t have to come here with a plan. <br> Just step out of your usual rhythm for a few days — and see what shifts when things slow down.",
+      "We move through Nepal without rushing. <br> Winding roads, rivers alongside, mountains in the distance, old towns, everyday places.",
+      "Some moments are quiet. <br> Others are easy. <br> Good conversations. Laughter. <br> Simple local food, maybe a beer. <br> Time that doesn’t feel managed.",
+      "Nothing to follow. Nothing to perform. <br> Somewhere along the way, you may see things a little differently — <br> or simply enjoy being here.",
+      "If this feels right, we can start with a conversation."
+    ]
+
+  [params.journey_flow]
+    title = "The Shape of the Journey"
+    subtitle = "5-day, 7-day, and 10-day versions"
+    steps = [
+      { title = "Application", description = "A brief written reflection of your intentions" },
+      { title = "Conversation", description = "A sincere, alignment-focused video call" },
+      { title = "Arrival", description = "A quiet, grounded welcome in Kathmandu" },
+      { title = "Slow Travel with Reflection", description = "A deep, unhurried dive through the Himalayas" },
+      { title = "Integration", description = "Space to process before departure" }
+    ]
+
+  [params.whycation]
+    title = "The Why-cation"
+    description = "We trade the usual \"tour\" for time: time to think, ask big questions, and just be. In the same way one might pay for a coach or mentor, here you’re experiencing an intimate Why-cation where nothing is forced but everything is possible."
+    features = [
+      { bold = "Arrival:", text = "A quiet welcome in Kathmandu. No rush." },
+      { bold = "Curated, highly comfortable accommodations:", text = "Handpicked stays that reflect the soul of Nepal." },
+      { bold = "The Road:", text = "We’ll drive in silence under Himalayan stars. The vehicle is our moving sanctuary." },
+      { bold = "Local Meals:", text = "Shared tables, authentic flavors, entirely untouristed." },
+      { bold = "Stargazing & Stillness:", text = "Days that end looking outward, giving you the space to look inward." },
+      { bold = "Conversations:", text = "Deep, one-on-one reflection, acting as a mirror for the shifts you are experiencing." }
+    ]
+
+  [params.host]
+    title = "Your Host, Prateek"
+    paragraphs = [
+      "I grew up under these same skies, where the mountains were just part of everyday life-woven into conversations, festivals, and quiet moments. It wasn’t until later that I realized how special that feeling is for people arriving from faster, more demanding worlds.",
+      "I didn’t start hosting to show Nepal as a typical destination, but to share a different way of being shaped by this place. I believe the most meaningful travel isn’t about seeing more-it’s about feeling something shift within you.",
+      "I’m not here to lead, but to accompany. I travel alongside a small group, creating a space where you can slow down, connect, and simply be yourself. Everything is built on trust, presence, and real human connection."
+    ]
+    quote = "Life is a story. Living is in the now. You can always edit the script."
+
+  [[params.testimonials]]
+    quote = "Spending time with Prateek feels strangely calming. Conversations don’t feel rushed or forced. You feel listened to — not analyzed, not judged. Somehow you end up talking about things you didn’t know you needed to say. You leave lighter, but also thinking more deeply about your own life."
+    author = "Michael"
+    location = "USA"
+
+  [[params.testimonials]]
+    quote = "What stands out about him is how he listens. He doesn’t interrupt or try to fix you. He listens fully, and then responds in a way that makes you see your own thoughts differently. Conversations with him feel less like discussion and more like discovery."
+    author = "Kimmo"
+    location = "Finland"
+
+  [[params.testimonials]]
+    quote = "Traveling with Prateek is different from normal travel. It’s not about checking places off a list. You notice small things — silence, people, stories, your own reactions. There is laughter, music, long conversations, and also comfortable quiet. The journey feels inward as much as outward."
+    author = "Christine"
+    location = "USA"
+
+  [[params.testimonials]]
+    quote = "Around him, you feel accepted as you are. There is no pressure to impress or pretend. His presence makes space for honesty — both joyful and difficult parts of life. You feel grounded without being told what to believe."
+    author = "Pollak"
+    location = "Hungary"
+
+  [[params.testimonials]]
+    quote = "Time spent with him stays with you. Not because he gives answers, but because he asks questions — sometimes without words — that continue working inside you long after the meeting ends."
+    author = "Carmen"
+    location = "Germany"
+
+  [params.investment]
+    title = "The Investment"
+    included_title = "Included in Your Investment"
+    included_items = [
+      "Personal hosting, presence, and attention by Prateek",
+      "Private airport transfers to and from Kathmandu",
+      "Curated, highly comfortable accommodations",
+      "All private ground transportation across the valley",
+      "Beautifully sourced, holistic daily meals",
+      "Deep cultural interpretation and guided philosophical reflection",
+      "Intimate travel in Prateek’s personal vehicle (up to 3 guests)",
+      "Continuous space for open, unstructured, meaningful conversation"
+    ]
+    excluded_title = "A La Carte & Exclusions"
+    excluded_items = [
+      "International flights to Kathmandu",
+      "Entry visa processing for Nepal",
+      "Personal shopping, souvenirs, and luxury items",
+      "Alcoholic beverages"
+    ]
+
+  [[params.faq]]
+    question = "What does this Why-cation include?"
+    answers = [
+      "A guided reflective travel experience in Nepal shaped around your pace, interests, and inner space — not a fixed itinerary.",
+      "Each journey blends nature, culture, and quiet reflection. You may experience scenic drives, short walks, meaningful conversations, journaling, meditation, shared meals, and time simply to pause and observe.",
+      "Nothing is rushed or scheduled tightly. The experience unfolds naturally, allowing space for both exploration and stillness.",
+      "At its heart, this journey is about slowing down, reconnecting with yourself, and experiencing Nepal in a personal and grounded way."
+    ]
+
+  [[params.faq]]
+    question = "What is the investment for this journey?"
+    answers = [
+      "This is a private, guided reflective journey rather than a group tour.",
+      "The investment typically ranges between $4,000 – $6,000, depending on whether you choose a 5-day, 7-day, or 10-day experience.",
+      "It includes all ground transportation in reliable vehicles, comfortable lodging, local meals during the journey, and personalized guidance and companionship throughout.",
+      "You are not paying for activities alone, but for spacious time, thoughtful presence, and a deeply personalized experience of Nepal."
+    ]
+
+  [[params.faq]]
+    question = "What if I don't meditate or hike?"
+    answers = [
+      "That’s completely fine — no prior experience is needed.",
+      "The journey adapts to you. Some days may include gentle walks or quiet sitting; other moments may simply be conversation, observation, or rest. Nothing is forced, and physical intensity is never the goal.",
+      "Curiosity matters more than experience."
+    ]
+
+  [[params.faq]]
+    question = "Is this spiritual or religious?"
+    answers = [
+      "No specific religion or belief system is taught or expected.",
+      "This journey approaches spirituality in an everyday sense — noticing life more carefully, becoming present, and reconnecting with what feels meaningful to you.",
+      "We may visit temples or share moments of meditation, but everything is optional. The focus is not on adopting beliefs, but on experiencing Nepal — and yourself — with greater awareness."
+    ]
+
+  [[params.faq]]
+    question = "Who is this journey best suited for?"
+    answers = [
+      "This experience tends to resonate with thoughtful travelers, people in life transitions, and those seeking pause rather than escape.",
+      "Many guests arrive not because something is wrong, but because something inside is asking deeper questions."
+    ]
+
+  [params.cta]
+    title = "An Invitation to Pause"
+    text = "Space is strictly limited to up to 3 guests per journey to protect the privacy, intimacy, and profound quiet of the container. Applications are thoughtfully reviewed, followed by a connection call."
+    button_text = "Begin the Journey"
+
+  # =========================================================================
+  # BOOK PAGE CONFIGURATION
+  # =========================================================================
+
+  [params.book]
+    formspree_endpoint = "xzdwgjlb"
+    tagline = "Newly Written Manifesto"
+    button_sample = "Read Online Sample"
+    button_acquire = "Acquire the Book"
+    
+    [params.book.two_paths]
+      path_a_tagline = "Physical or E-Reader"
+      path_a_title = "Paperback & eBook"
+      path_a_description = "The official print and digital editions will soon be available worldwide on Amazon and Apple Books. We are currently in the final proofing stages to ensure an exceptional editorial and aesthetic experience."
+      path_a_badge_title = "Coming Soon"
+      path_a_badge_sub = "Amazon & Apple Books"
+      path_a_footnote = "To read the full text before the official release, please request the complimentary digital manuscript using the form."
+      
+      path_b_tagline = "Intimate Dialogue"
+      path_b_title = "Request the Manuscript"
+      path_b_description = "Are you considering joining me for a private <strong>Why-cation</strong> in Nepal? If so, I would love to share a complimentary digital copy of the full manuscript with you. Making the book available on request allows us to begin a thoughtful conversation before traveling together."
+      path_b_form_btn = "Send Complimentary PDF"
+      path_b_success_html = """
+<div class="text-center" style="padding: 3rem 1rem;">
+    <h3 class="serif-title" style="font-size: 2.2rem; color: var(--color-forest); margin-bottom: 1.5rem;">Manuscript Requested</h3>
+    <p class="body-text large-text">Thank you for sharing your thoughts so sincerely.</p>
+    <div style="margin-top: 2rem; padding: 2rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.03);">
+        <p class="body-text" style="font-size: 1rem; margin-bottom: 0;">
+            I will personally review your request and email the full digital manuscript of <strong>'How You Happen'</strong> to you shortly. It is a pleasure to connect with another thoughtful reader.
+        </p>
+    </div>
+</div>
+"""
+
+    [[params.book.chapters]]
+      id = "prologue"
+      nav_title = "Prologue"
+      kicker = "Introduction"
+      title = "Prologue"
+      html_content = """
+<p class="drop-cap">This book will disappoint you. </p>
+<p>If your expectations are like: Every book that opened with someone's darkest moment, carefully lit, professionally vulnerable. Every TED talk that started with a divorce, a diagnosis, a breakdown, the strategic wound displayed just long enough to make you trust the person holding the mic.</p>
+<p>Every podcast that turned your nervous system into a personality, and product. Every guru who handed you a story about your childhood and then kept you coming back to discuss it, refine it, protect it. Every piece of content designed to make you feel broken in the specific shape of their solution.</p>
+<p>This is one of the worst lies ever. Because it cleverly has partial truth. The body does respond. Early experience does shape you. Repetition does wire you. But here's what they don't tell you. They are the ones running the repetition. Every session, every video, every framework brings you back to the same story, and you wire it deeper each time. The excavation is the repetition. You are not revisiting the past. You are creating the present.</p>
+<blockquote>
+    Like picking your wounds constantly and calling it insight.
+</blockquote>
+<p>Because a person who's moved past it doesn't need what they're selling. Their book. Their session. Their videos. A healed person is a lost customer.</p>
+<p>You were never just your past. The instrument is more fluid, more free, more capable of change than they want you to believe. Than any childhood story can contain. Because that’s empowering. And that's not a sellable idea. Empowerment doesn't need a subscription.</p>
+<p>And then there's the other industry. The one that decided you are a productivity unit with a mindset problem.</p>
+<p>Growth. Leadership. Hard Work. Winning. Hustle. The concept, sold so widely it became invisible, that you are perpetually not enough and the solution is more. More output, more optimization, more self-improvement purchased in quarterly installments.</p>
+<p>Hard work feels hard because the work they want from you isn't the work you want to do. Growth feels painful because the growth you want is not the growth they want. They want their own growth. Leadership sounds powerful because it's been polished into something aspirational, but look at what it actually describes: having an idea, calling it vision, and getting others to execute it. A slightly more sophisticated way of saying: do what I say and feel inspired doing it.</p>
+<p>And the whole thing runs on a particular religion. The religion of data.</p>
+<p>Studies show. Research suggests. Here's the science behind it. The white coat has replaced the white robe. The university has replaced the temple. The peer-reviewed paper has replaced the scripture. The ritual is identical: wake, commute, sit in rows, receive truth from the elevated, return home. But because it's the current religion and you’re in it, because it's the water everyone's swimming in, people don’t seem to see it enough. Same people who roll their eyes at Sunday mass, Puja, or Meditation are nodding seriously at a conference keynote, citing statistics like prayers.</p>
+<p>Science is useful. Genuinely. But treated as the only language that makes experience real, it does something conforming and damaging: it tells you that if there are no studies confirming what you're living, you aren't quite living it. If there are no scientific words for it, you are delusional.</p>
+<p>It's the current hip, trendy group of data loving people that kiss each other's seemingly intellectual scientific ass.</p>
+<p>So why is this book here. Because the math never added up.</p>
+<p>I'm not going to perform my wounds to earn your trust. But if the trauma industry's claims were correct, I should have been a narcissist, a psychopath, or a murderer. The people who know me don't say that.</p>
+<p>Underneath all of it, the trauma industry, the productivity cult, the science priesthood, there's a real question. One you've probably felt in the moments between all the noise. Not dramatically. Just a quiet, persistent hum.</p>
+<p>What is actually happening here. In me. Between me and other people. In this life I'm moving through. Not what's wrong with you. Not how to optimize yourself. Not which wound explains which pattern.</p>
+<p>Just, what is this. How does it work. What am I actually doing when I walk into a room, when I fall in love, when I can't sleep, when something I built falls apart, when I sit in silence long enough to hear something under the performance.</p>
+<p>This book is about that.</p>
+<p>You are an instrument in a concert that has been playing since before you arrived, and will keep playing after you leave. The only question is whether you're actually listening to it.</p>
+"""
+
+    [[params.book.chapters]]
+      id = "preface"
+      nav_title = "Preface"
+      kicker = "Opening"
+      title = "Preface"
+      html_content = """
+<p class="drop-cap">At some point, life slows down enough for a question to sneak in.</p>
+<p>Maybe you're in the middle of something ordinary: a commute, a meal, a moment between meetings, and it just arrives, uninvited.</p>
+<blockquote style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; text-align: center; border: none; padding: 0; color: var(--color-forest); font-style: italic; margin: 2rem 0;">
+    Is this it?<br>
+    Is this really what I want?<br>
+    Is this who I am?
+</blockquote>
+<p>Maybe something went wrong, and the story you've been living doesn't quite fit anymore. You're not in crisis, exactly. But you're not fine either.</p>
+<p>Sometimes everything is going well. By every external measure, life looks good. And the question still comes. That one is the hardest to admit.</p>
+<p>Most of us try to get out of it as fast as possible. We fill it. We get busier. We make plans. Because sitting in that kind of quiet is deeply uncomfortable.</p>
+<p>But the pause is the most honest place you'll ever be.</p>
+<p>I kept asking questions in those pauses. Carried them over years. About people, mostly.</p>
+<p>Why do they do what they do? Why is there so often such a gap between what people say matters to them, and how they actually live?</p>
+<p>When I looked honestly enough, those questions always turned back on me.</p>
+<p>After years of carrying them, some patterns began to emerge. Slowly. Not just from theory. From watching, listening, and sitting honestly with a lot of uncomfortable observations. This book is what came out of that.</p>
+<p>One thing worth saying before you continue.</p>
+<p>This book won't tell you what to do. Except noticing.</p>
+<p>Not because I am performing modesty, but because that is genuinely who I am. I don't know what's right for you. Nobody does, and most who say they do are on an unaware ego trip.</p>
+<p>What I can do, what I've tried to do here, is describe what I see. Clearly enough that you can look at your own life and decide for yourself what, if anything, to do with it.</p>
+<p>My goal is to be useless.</p>
+"""
+
+    [[params.book.chapters]]
+      id = "chapter1"
+      nav_title = "Chapter 1"
+      kicker = "Chapter 1"
+      title = "1. The (I)nstrument"
+      html_content = """
+<div class="chapter-quote">The instrument generates a feeling. You think it is reality.</div>
+<p class="drop-cap">You are an instrument. Of nature. An organism.</p>
+<p>A complex, fleshy mass of biology, organs, viscera, nerves, all of it held upright by a skeletal frame and neatly packaged in skin, and if lucky, nicely designed. That’s your hardware.</p>
+<p>And like any instrument, it matters that you take care of it, service it from time to time, so that it functions when life actually needs something from you.</p>
+<p>Your instrument has four broad components:</p>
+<p><strong>Body.</strong> Energy, health, physical capability. The face and presence the world encounters before you open your mouth. People make calculations about you in milliseconds based on your body. You also make calculations about others based on it, and about yourself too, whether you admit it or not. That’s primal wiring. You were scanning bodies, faces, and posture for information long before you had words for any of it. This is your hardware.</p>
+<p>The ones that follow are your software.</p>
+<p><strong>Mind.</strong> Attention, perception, thought, belief, memory, expectation. The part of you that focuses, computes, makes sense of everything coming in, and predicts. That last part is important. The mind isn’t just processing the present. It’s constantly running ahead, anticipating, filling in gaps with conclusions you drew years ago and never went back to check. And then treating those predictions as facts.</p>
+<p><strong>Heart.</strong> Feelings, and drives; the emotional need for safety, novelty, to feel important, and connect. What pulls you forward, most of the time even when logic says otherwise. The heart doesn’t negotiate with the mind. It just moves. And when it feels threatened, it stops you faster than any rational argument ever could.</p>
+<p><strong>Meaning.</strong> The seeking beyond yourself, to serve and contribute. Purpose, direction, the sense that what you’re doing matters. Some people have it clearly. Some have lost it. Some never knew they needed it until things went wrong, and others feel it as a distinct unease, a quiet disharmony, when they sit in silence long enough, even when everything looks fine on paper.</p>
+<p>Together, these four work in a symphony to help you function. Not always a harmonious one.</p>
+<h3 style="font-size: 1.8rem; margin-top: 3.5rem; color: var(--color-forest);">You repeat, therefore you are.</h3>
+<p>Everything you'd call yourself is repetition wearing a different name. A belief is a thought you repeated until you stopped questioning it. A habit is a behavior repeated until the body does it without asking. A passion is a repeated liking. Hate, a repeated disliking.</p>
+<p>Language is repeated sound, hence it's difficult to learn one later. Because you feel you don’t have time for repetition. Culture is a group's repeated habits, solidified over generations, hence it is so slow to change. Your national food is just what your tongue was trained on early and often. Your family is, in large part, the same people, the same dynamics, on loop across years.</p>
+<p>You are what you repeat.</p>
+<p>Which means the instrument is not fixed. It just has momentum. And once you realize this, you can choose what you repeat.</p>
+<p>I have a person that I know, Saurav, who keeps coming to meet me. He used to be my student in an MBA Leadership course. He has cerebral palsy.</p>
+<p>The first time I noticed Saurav was the first day of class. Walking was difficult. Writing by hand, impossible. He used a laptop. Holding a glass steady was a daily struggle. When he spoke, the words came out with a lot of effort. But he had a huge smile. And a sharpness in his eyes that most people in that room didn't have.</p>
+<p>Looking at him, I used to feel very small. I still do. Not because he made me feel that way. Because I realized that the struggles I thought I had were nothing compared to what he had to deal with on a daily basis. All of the activities I took for granted, I felt I was lucky to be able to do them: standing up, brushing my teeth, going to the bathroom, putting clothes on, walking, driving, riding, and many more activities.</p>
+<p>As time passed by what I also noticed, and this stayed with me, was that most of his classmates, teachers, and administrators weren't noticing his challenges. As if they were getting used to it. Not because they were cruel. Because they were too busy inside their own instruments.</p>
+<p>Saurav has a sharp mind. A driven heart. A clear sense that he wants to build something and contribute. He has normal desires, friends, a partner, a life that reflects who he actually is. But the world keeps responding to his body first. Before it gets to anything else, and keeps rejecting his efforts. He eventually found a job after a lot of struggle. And it doesn't pay him what he's worth. The other things he wants are still waiting.</p>
+<p>There's something else worth naming here.</p>
+<p>A lot of people today have quietly replaced the instrument with something else. They've decided, without quite saying it out loud, that they are made of money, power, popularity, and legacy they're building. These become the real hardware. The thing they service, protect, and optimize.</p>
+<p>Body, mind, heart, meaning become secondary. Things to manage around the main project. You can see what happens. The body gets ignored until it fails. The mind runs on regrets and plans. The heart runs on fear and anxiety. And meaning becomes a luxury, something to think about later, after the real work is done.</p>
+<p>The instrument doesn't disappear just because you've stopped paying attention to it. It just starts making noise in other ways.</p>
+<p>So, here’s what the instrument playing actually sounds like sometimes.</p>
+<p>You’re in an important meeting. Your body is tired. Bad night, sleep deprived, no food, slightly ill. Your mind is predicting the meeting will go badly because the last three did. Your heart is quietly terrified of being dismissed again. And your meaning, your sense of why any of this matters, is somewhere you can’t currently locate.</p>
+<p>That’s your instrument walking into the room.</p>
+<p>After the meeting, ask someone else in the same meeting how it went. They slept well. They had a good morning. They’re curious, not threatened. Same meeting, same people, same agenda. Completely different experience. Not because the meeting was different, but the instruments and their conditions were.</p>
+<p>Now this is where it gets interesting, and slightly uncomfortable.</p>
+<p>Your instrument produces states. Moods, and feelings. The trouble isn’t that it produces them. It is wired to do so. The trouble is you get attached to them, make memories and call them beliefs, perspectives, and identity. And slowly you start believing them to be truth, reality, and you. You stop watching the anxiety and start being the anxiety. Or the other way, you stop watching the ecstasy and start being ecstasy. Only to realize later that it was temporary.</p>
+<p>The instrument generates a feeling. You think it is reality. The instrument does not provide the truth. It provides signals and information that gets synthesized into perspective. The lens. Your lens.</p>
+<p>If you look at the world through black sunglasses, the world will look a bit darker. With brown ones, a bit browner. Through the lens of mathematics, you’ll see numbers and patterns. Through the lens of trauma, the world ready to traumatize you. Through the lens of money, you’ll see everything as a transaction to profit from. Through the lens of love, the world full of opportunities to connect.</p>
+<p>Same world. Different instrument settings. Different experiences.</p>
+<p>But first, you need to know what you’re working with.</p>
+<p>So just see the instrument. Understand what it's doing. Catch it in the act. Notice the repetitions, the attachments and avoidances across body, mind, heart, and meaning, that have slowly made you the peculiar instrument you are. Once you can watch the instrument instead of being dragged by it, something shifts. Not dramatically. Not overnight. But slowly. You start showing up differently. In rooms, in conversations, in the quiet moments when it's just you. That's where we're going.</p>
+<div style="background-color: var(--color-stone); padding: 2.5rem; border-radius: 8px; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.03);">
+    <h4 class="serif-title" style="font-size: 1.5rem; color: var(--color-forest); margin-bottom: 1.5rem; margin-top: 0; font-weight: 500;">Reflect</h4>
+    <ul style="list-style: none; padding-left: 0; font-size: 1.05rem;">
+        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;"><span style="color: var(--color-forest);">&mdash;</span> <span>Which of the four dimensions is most neglected in your life right now, and what has that cost you?</span></li>
+        <li style="margin-bottom: 1rem; display: flex; gap: 0.5rem;"><span style="color: var(--color-forest);">&mdash;</span> <span>What feeling has your instrument been producing lately that you’ve been treating as truth?</span></li>
+        <li style="margin-bottom: 0; display: flex; gap: 0.5rem;"><span style="color: var(--color-forest);">&mdash;</span> <span>What repetition have you noticed in yourself, across different situations and different years, that you’ve never fully examined?</span></li>
+    </ul>
+</div>
+"""
+
+  # =========================================================================
+  # CONVERSATIONS PAGE CONFIGURATION
+  # =========================================================================
+
+  [params.conversations]
+    formspree_endpoint = "mgvykony"
+    
+    [params.conversations.hero]
+      kicker = "For 1:1 Conversations"
+      title = "Conversations"
+      subtitle = "\"Life is a story. Living is in the now. You can always edit the script.\""
+      cta_text = "Request a Conversation"
+      
+    [params.conversations.about]
+      title = "A space to slow down, breathe, and reflect."
+      description = "Whether you're a young professional at a crossroads, a thoughtful elder seeking renewal, or simply someone feeling stuck - you are welcome here. These one-on-one sessions are tailored entirely to your pace and depth."
+      
+      [[params.conversations.about.items]]
+        title = "Deep Listening"
+        text = "In a world that rarely stops to hear, these conversations are anchored in deep, quiet attention. I act as a sounding mirror for your thoughts—listening not just to what is said, but to the spaces in between."
+        
+      [[params.conversations.about.items]]
+        title = "New Perspectives"
+        text = "Together, we share insights and questions that shift the horizon. We look at the patterns that no longer serve you and explore the possibilities that arise when we stop trying to manage everything."
+        
+      [[params.conversations.about.items]]
+        title = "Organic Flow"
+        text = "There is no rigid curriculum. We might talk, sit in silence, or simply observe the world around us. The conversation follows what is alive in you in the moment, allowing clarity to emerge naturally."
+        
+    [params.conversations.host]
+      title = "About Prateek"
+      paragraphs = [
+        "I’ve spent much of my life teaching, creating, and exploring the human experience—through university classrooms, trainings, music, and acting. What I’ve learned is that real change doesn’t come from advice, but from honest conversation and reflection.",
+        "I’m not here as an expert with answers. I’m here to listen, to ask, and to hold space for you to see things more clearly.",
+        "I keep this work personal and intentional, so each session feels grounded, open, and real. This is your space as much as it is mine."
+      ]
+      footnote = "* Request a call to discuss timing and pricing."
+      
+    [params.conversations.form]
+      title = "Request a Conversation"
+      description = "Fill out the form below to begin a conversation."
+      button_text = "Request a Conversation"
+      success_html = """
+<div class="text-center" style="padding: 2rem 0;">
+    <h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3>
+    <p class="body-text large-text">Thank you. Prateek will get back to you shortly to schedule our conversation.</p>
+    <div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">Contemplative Reading</h4>
+        <p class="body-text" style="font-size: 1rem; margin-bottom: 0;">
+            If you are preparing for a discovery call, we invite you to request a complimentary copy of Prateek's book, <strong>'How You Happen'</strong>, on our <a href="/book/" style="color: var(--color-forest); text-decoration: underline; font-weight: 500;">Book Page</a> to align with the core philosophy we will explore.
+        </p>
+    </div>
+</div>
+"""
+
+  # =========================================================================
+  # APPLY PAGE CONFIGURATION
+  # =========================================================================
+
+  [params.apply]
+    formspree_endpoint = "mkoqdaqw"
+    title = "Application for Your Why-cation"
+    description = "This Why-cation is by application only. Space is strictly limited to up to 3 individuals - this helps me preserve the intimacy and attention I provide to your personal experience."
+    duration = "Duration is typically 5 - 10 days."
+    instruction = "Please fill out the questions below as honestly as you can."
+    investment_hint = "The all-inclusive Why-cation investment is $4,000 - $6,000."
+    button_text = "Submit Application"
+    disclaimer = "Within 48 hours, Prateek will email you to schedule a casual 30-minute discovery call to ensure the Why-cation is a perfect fit. No deposit is required until after our conversation."
+    success_html = """
+<div class="text-center" style="padding: 2rem 0;">
+    <h3 class="serif-title mb-large" style="font-size: 2.2rem; color: var(--color-forest);">Application Received</h3>
+    <p class="body-text large-text">Thank you. Prateek will review your application and be in touch within 48 hours to schedule a casual 30-minute discovery call.</p>
+    <div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">A Welcoming Gift</h4>
+        <p class="body-text" style="font-size: 1rem; margin-bottom: 0;">
+            While we prepare for our conversation, we have sent a complimentary digital copy of Prateek's book, <strong>'How You Happen'</strong>, to your email. It serves as a window into the quiet, unstructured spaces we will explore together in the Himalayas.
+        </p>
+    </div>
+</div>
+"""
+
+  # =========================================================================
+  # CONTACT PAGE CONFIGURATION
+  # =========================================================================
+
+  [params.contact]
+    formspree_endpoint = "xjgzradl"
+    title = "Contact"
+    description = "Have questions about the journey, feedback on the book, or simply want to send a general message? Fill out the form below."
+    form_title = "Send a Message"
+    button_text = "Send Message"
+    success_html = """
+<div class="text-center" style="padding: 3rem 0;">
+    <h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3>
+    <p class="body-text large-text">Thank you. Prateek has received your message and will get back to you shortly.</p>
+</div>
+"""
+    
+    [params.contact.sidebar]
+      title = "Specific Inquiries"
+      
+      [[params.contact.sidebar.cards]]
+        title = "Apply for the Why-cation"
+        description = "Ready to leave schedules behind and enter stillness? Submit an application for the 5-10 day reflective journey in the Nepali Himalayas."
+        link_url = "/apply/"
+        link_text = "Begin Application"
+        
+      [[params.contact.sidebar.cards]]
+        title = "Request a Conversation"
+        description = "Seek a structured 1:1 reflection session with Prateek about transitions, philosophy, or personal direction in a quiet, listening space."
+        link_url = "/conversations/#book"
+        link_text = "Request Conversation"
+        
+      [[params.contact.sidebar.cards]]
+        title = "Request \"How You Happen\""
+        description = "Exhausted by constant optimization? Request a printed galley or digital copy of Prateek's anti-self-help book."
+        link_url = "/book/"
+        link_text = "Request Book"

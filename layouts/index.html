@@ -10,56 +10,68 @@
     {{ end }}
     <div class="hero-overlay-dark"></div>
     <div class="hero-content fade-in-up">
-        <span class="hero-kicker">Limited to up to 3 participants</span>
-        <h1 class="hero-title">Why-cation</h1>
+        <span class="hero-kicker">{{ .Site.Params.hero.kicker | default "Limited to up to 3 participants" }}</span>
+        <h1 class="hero-title">{{ .Site.Params.hero.title | default "Why-cation" }}</h1>
         <p class="hero-subtitle"
             style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 2.0; letter-spacing: 0.02em;">
-            <i> An intimate and private reflective travel experience in Nepal for thoughtful individuals seeking
-                clarity, rest, reflection space, and reconnection with their authentic self.</i>
+            {{ .Site.Params.hero.subtitle | default "<i> An intimate and private reflective travel experience in Nepal for thoughtful individuals seeking clarity, rest, reflection space, and reconnection with their authentic self.</i>" | safeHTML }}
         </p>
         <div class="hero-actions">
-            <a href='{{ "/apply/" | relURL }}' class="btn-primary" style="padding: 1rem 3rem;">Begin the
-                Journey</a>
+            <a href='{{ "/apply/" | relURL }}' class="btn-primary" style="padding: 1rem 3rem;">{{ .Site.Params.hero.cta_text | default "Begin the Journey" }}</a>
         </div>
     </div>
     <div class="scroll-indicator">
-        <span>Scroll to explore</span>
+        <span>{{ .Site.Params.hero.scroll_text | default "Scroll to explore" }}</span>
     </div>
 </section>
 
-<!-- The Invitation / Intro -->
 <section id="intro" class="section intro-section text-center bg-ivory">
     <div class="container narrow-container fade-in-up">
-        <h2 class="serif-title intro-title">Travel, Reflect, and Have Fun</h2>
+        <h2 class="serif-title intro-title">{{ .Site.Params.intro.title | default "Travel, Reflect, and Have Fun" }}</h2>
 
         <div class="intro-content">
-            <p class="body-text">
-                You don’t have to come here with a plan. <br>
-                Just step out of your usual rhythm for a few days — and see what shifts when things slow down.
-            </p>
+            {{ if .Site.Params.intro.paragraphs }}
+                {{ $len := len .Site.Params.intro.paragraphs }}
+                {{ range $index, $paragraph := .Site.Params.intro.paragraphs }}
+                    {{ if eq $index (sub $len 1) }}
+                        <p class="body-text mt-medium" style="font-weight: 500; color: var(--color-forest);">
+                            {{ $paragraph | safeHTML }}
+                        </p>
+                    {{ else }}
+                        <p class="body-text">
+                            {{ $paragraph | safeHTML }}
+                        </p>
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                <p class="body-text">
+                    You don’t have to come here with a plan. <br>
+                    Just step out of your usual rhythm for a few days — and see what shifts when things slow down.
+                </p>
 
-            <p class="body-text">
-                We move through Nepal without rushing. <br>
-                Winding roads, rivers alongside, mountains in the distance, old towns, everyday places.
-            </p>
+                <p class="body-text">
+                    We move through Nepal without rushing. <br>
+                    Winding roads, rivers alongside, mountains in the distance, old towns, everyday places.
+                </p>
 
-            <p class="body-text">
-                Some moments are quiet. <br>
-                Others are easy. <br>
-                Good conversations. Laughter. <br>
-                Simple local food, maybe a beer. <br>
-                Time that doesn’t feel managed.
-            </p>
+                <p class="body-text">
+                    Some moments are quiet. <br>
+                    Others are easy. <br>
+                    Good conversations. Laughter. <br>
+                    Simple local food, maybe a beer. <br>
+                    Time that doesn’t feel managed.
+                </p>
 
-            <p class="body-text">
-                Nothing to follow. Nothing to perform. <br>
-                Somewhere along the way, you may see things a little differently — <br>
-                or simply enjoy being here.
-            </p>
+                <p class="body-text">
+                    Nothing to follow. Nothing to perform. <br>
+                    Somewhere along the way, you may see things a little differently — <br>
+                    or simply enjoy being here.
+                </p>
 
-            <p class="body-text mt-medium" style="font-weight: 500; color: var(--color-forest);">
-                If this feels right, we can start with a conversation.
-            </p>
+                <p class="body-text mt-medium" style="font-weight: 500; color: var(--color-forest);">
+                    If this feels right, we can start with a conversation.
+                </p>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -67,28 +79,28 @@
 <!-- Journey Flow -->
 <section class="section bg-stone text-center" style="padding-top: 6rem; padding-bottom: 6rem;">
     <div class="container narrow-container fade-in-up">
-        <h2 class="serif-title" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-forest);">The Shape
-            of the Journey</h2>
-        <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 3rem; font-style: italic;">5-day,
-            7-day, and 10-day versions</p>
+        <h2 class="serif-title" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Site.Params.journey_flow.title | default "The Shape of the Journey" }}</h2>
+        <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 3rem; font-style: italic;">{{ .Site.Params.journey_flow.subtitle | default "5-day, 7-day, and 10-day versions" }}</p>
         <div
             style="display: flex; flex-direction: column; align-items: center; gap: 1.2rem; color: var(--color-text-dark); font-size: 1.15rem;">
-            <p><strong>1. Application</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A
-                    brief written reflection of your intentions</span></p>
-            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
-            <p><strong>2. Conversation</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A
-                    sincere, alignment-focused video call</span></p>
-            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
-            <p><strong>3. Arrival</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A quiet,
-                    grounded welcome in Kathmandu</span></p>
-            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
-            <p><strong>4. Slow Travel with Reflection</strong><br><span
-                    style="font-size: 0.95rem; color: var(--color-text-muted);">A
-                    deep, unhurried dive through the Himalayas</span></p>
-            <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
-            <p><strong>5. Integration</strong><br><span
-                    style="font-size: 0.95rem; color: var(--color-text-muted);">Space to process before departure</span>
-            </p>
+            {{ if .Site.Params.journey_flow.steps }}
+                {{ range $index, $step := .Site.Params.journey_flow.steps }}
+                    {{ if $index }}
+                        <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+                    {{ end }}
+                    <p><strong>{{ add $index 1 }}. {{ $step.title }}</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">{{ $step.description }}</span></p>
+                {{ end }}
+            {{ else }}
+                <p><strong>1. Application</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A brief written reflection of your intentions</span></p>
+                <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+                <p><strong>2. Conversation</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A sincere, alignment-focused video call</span></p>
+                <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+                <p><strong>3. Arrival</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A quiet, grounded welcome in Kathmandu</span></p>
+                <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+                <p><strong>4. Slow Travel with Reflection</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">A deep, unhurried dive through the Himalayas</span></p>
+                <div style="height: 40px; width: 1px; background-color: var(--color-forest); opacity: 0.3;"></div>
+                <p><strong>5. Integration</strong><br><span style="font-size: 0.95rem; color: var(--color-text-muted);">Space to process before departure</span></p>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -107,35 +119,41 @@
                 {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
-                <h2 class="section-title">The Why-cation</h2>
+                <h2 class="section-title">{{ .Site.Params.whycation.title | default "The Why-cation" }}</h2>
                 <p class="body-text">
-                    We trade the usual "tour" for time: time to think, ask big questions, and just be. In the
-                    same way one might pay for a coach or mentor, here you’re experiencing an intimate
-                    Why-cation where nothing is forced but everything is possible.
+                    {{ .Site.Params.whycation.description | default "We trade the usual \"tour\" for time: time to think, ask big questions, and just be. In the same way one might pay for a coach or mentor, here you’re experiencing an intimate Why-cation where nothing is forced but everything is possible." }}
                 </p>
                 <ul class="journey-features">
-                    <li>
-                        <strong>Arrival:</strong> A quiet welcome in Kathmandu. No rush.
-                    </li>
-                    <li>
-                        <strong>Curated, highly comfortable accommodations:</strong> Handpicked stays that
-                        reflect the soul of Nepal.
-                    </li>
-                    <li>
-                        <strong>The Road:</strong> We’ll drive in silence under Himalayan stars. The vehicle is
-                        our moving sanctuary.
-                    </li>
-                    <li>
-                        <strong>Local Meals:</strong> Shared tables, authentic flavors, entirely untouristed.
-                    </li>
-                    <li>
-                        <strong>Stargazing & Stillness:</strong> Days that end looking outward, giving you the
-                        space to look inward.
-                    </li>
-                    <li>
-                        <strong>Conversations:</strong> Deep, one-on-one reflection, acting as a mirror for the
-                        shifts you are experiencing.
-                    </li>
+                    {{ if .Site.Params.whycation.features }}
+                        {{ range .Site.Params.whycation.features }}
+                            <li>
+                                <strong>{{ .bold }}</strong> {{ .text }}
+                            </li>
+                        {{ end }}
+                    {{ else }}
+                        <li>
+                            <strong>Arrival:</strong> A quiet welcome in Kathmandu. No rush.
+                        </li>
+                        <li>
+                            <strong>Curated, highly comfortable accommodations:</strong> Handpicked stays that
+                            reflect the soul of Nepal.
+                        </li>
+                        <li>
+                            <strong>The Road:</strong> We’ll drive in silence under Himalayan stars. The vehicle is
+                            our moving sanctuary.
+                        </li>
+                        <li>
+                            <strong>Local Meals:</strong> Shared tables, authentic flavors, entirely untouristed.
+                        </li>
+                        <li>
+                            <strong>Stargazing & Stillness:</strong> Days that end looking outward, giving you the
+                            space to look inward.
+                        </li>
+                        <li>
+                            <strong>Conversations:</strong> Deep, one-on-one reflection, acting as a mirror for the
+                            shifts you are experiencing.
+                        </li>
+                    {{ end }}
                 </ul>
             </div>
         </div>
@@ -158,23 +176,31 @@
                 {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
-                <h2 class="section-title">Your Host, Prateek</h2>
-                <p class="body-text">
-                    I grew up under these same skies, where the mountains were just part of everyday life-woven into
-                    conversations, festivals, and quiet moments. It wasn’t until later that I realized how special that
-                    feeling is for people arriving from faster, more demanding worlds.
-                </p>
-                <p class="body-text">
-                    I didn’t start hosting to show Nepal as a typical destination, but to share a different way of being
-                    shaped by this place. I believe the most meaningful travel isn’t about seeing more-it’s about
-                    feeling something shift within you. </p>
-                <p class="body-text">
-                    I’m not here to lead, but to accompany. I travel alongside a small group, creating a space where you
-                    can slow down, connect, and simply be yourself. Everything is built on trust, presence, and real
-                    human connection.
-                </p>
+                <h2 class="section-title">{{ .Site.Params.host.title | default "Your Host, Prateek" }}</h2>
+                {{ if .Site.Params.host.paragraphs }}
+                    {{ range .Site.Params.host.paragraphs }}
+                        <p class="body-text">
+                            {{ . | safeHTML }}
+                        </p>
+                    {{ end }}
+                {{ else }}
+                    <p class="body-text">
+                        I grew up under these same skies, where the mountains were just part of everyday life-woven into
+                        conversations, festivals, and quiet moments. It wasn’t until later that I realized how special that
+                        feeling is for people arriving from faster, more demanding worlds.
+                    </p>
+                    <p class="body-text">
+                        I didn’t start hosting to show Nepal as a typical destination, but to share a different way of being
+                        shaped by this place. I believe the most meaningful travel isn’t about seeing more-it’s about
+                        feeling something shift within you. </p>
+                    <p class="body-text">
+                        I’m not here to lead, but to accompany. I travel alongside a small group, creating a space where you
+                        can slow down, connect, and simply be yourself. Everything is built on trust, presence, and real
+                        human connection.
+                    </p>
+                {{ end }}
                 <blockquote class="founder-quote">
-                    "Life is a story. Living is in the now. You can always edit the script."
+                    "{{ .Site.Params.host.quote | default "Life is a story. Living is in the now. You can always edit the script." }}"
                 </blockquote>
             </div>
         </div>
@@ -184,40 +210,49 @@
 <!-- Testimonials -->
 <section id="testimonials" class="section bg-ivory">
     <div class="container testimonials-container fade-in-up">
-        <h2 class="section-title text-center">What people say</h2>
+        <h2 class="section-title text-center">{{ .Site.Params.testimonials_title | default "What people say" }}</h2>
         <div class="testimonials-grid">
-            <div class="testimonial-item">
-                <p class="testimonial-quote">"Spending time with Prateek feels strangely calming. Conversations don’t
-                    feel rushed or forced. You feel listened to — not analyzed, not judged. Somehow you end up talking
-                    about things you didn’t know you needed to say. You leave lighter, but also thinking more deeply
-                    about your own life."</p>
-                <div class="testimonial-author">&mdash; Michael, USA</div>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-quote">"What stands out about him is how he listens. He doesn’t interrupt or try
-                    to fix you. He listens fully, and then responds in a way that makes you see your own thoughts
-                    differently. Conversations with him feel less like discussion and more like discovery."</p>
-                <div class="testimonial-author">&mdash; Kimmo, Finland</div>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-quote">"Traveling with Prateek is different from normal travel. It’s not about
-                    checking places off a list. You notice small things — silence, people, stories, your own reactions.
-                    There is laughter, music, long conversations, and also comfortable quiet. The journey feels inward
-                    as much as outward."</p>
-                <div class="testimonial-author">&mdash; Christine, USA</div>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-quote">"Around him, you feel accepted as you are. There is no pressure to impress
-                    or pretend. His presence makes space for honesty — both joyful and difficult parts of life. You feel
-                    grounded without being told what to believe."</p>
-                <div class="testimonial-author">&mdash; Pollak, Hungary</div>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-quote">"Time spent with him stays with you. Not because he gives answers, but
-                    because he asks questions — sometimes without words — that continue working inside you long after
-                    the meeting ends."</p>
-                <div class="testimonial-author">&mdash; Carmen, Germany</div>
-            </div>
+            {{ if .Site.Params.testimonials }}
+                {{ range .Site.Params.testimonials }}
+                    <div class="testimonial-item">
+                        <p class="testimonial-quote">"{{ .quote }}"</p>
+                        <div class="testimonial-author">&mdash; {{ .author }}, {{ .location }}</div>
+                    </div>
+                {{ end }}
+            {{ else }}
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Spending time with Prateek feels strangely calming. Conversations don’t
+                        feel rushed or forced. You feel listened to — not analyzed, not judged. Somehow you end up talking
+                        about things you didn’t know you needed to say. You leave lighter, but also thinking more deeply
+                        about your own life."</p>
+                    <div class="testimonial-author">&mdash; Michael, USA</div>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"What stands out about him is how he listens. He doesn’t interrupt or try
+                        to fix you. He listens fully, and then responds in a way that makes you see your own thoughts
+                        differently. Conversations with him feel less like discussion and more like discovery."</p>
+                    <div class="testimonial-author">&mdash; Kimmo, Finland</div>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Traveling with Prateek is different from normal travel. It’s not about
+                        checking places off a list. You notice small things — silence, people, stories, your own reactions.
+                        There is laughter, music, long conversations, and also comfortable quiet. The journey feels inward
+                        as much as outward."</p>
+                    <div class="testimonial-author">&mdash; Christine, USA</div>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Around him, you feel accepted as you are. There is no pressure to impress
+                        or pretend. His presence makes space for honesty — both joyful and difficult parts of life. You feel
+                        grounded without being told what to believe."</p>
+                    <div class="testimonial-author">&mdash; Pollak, Hungary</div>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Time spent with him stays with you. Not because he gives answers, but
+                        because he asks questions — sometimes without words — that continue working inside you long after
+                        the meeting ends."</p>
+                    <div class="testimonial-author">&mdash; Carmen, Germany</div>
+                </div>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -225,60 +260,74 @@
 <!-- The Details -->
 <section id="details" class="section bg-stone">
     <div class="container narrow-container fade-in-up">
-        <h2 class="section-title text-center">The Investment</h2>
+        <h2 class="section-title text-center">{{ .Site.Params.investment.title | default "The Investment" }}</h2>
         <div class="split-list mt-medium"
             style="display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             <div class="list-block">
                 <h3 class="serif-title" style="font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-forest);">
-                    Included in
-                    Your Investment
+                    {{ .Site.Params.investment.included_title | default "Included in Your Investment" }}
                 </h3>
                 <ul class="body-text" style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.5;">
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Personal hosting, presence,
-                            and attention by Prateek</span>
-                    </li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Private airport transfers
-                            to and from Kathmandu</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Curated, highly comfortable
-                            accommodations</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>All private ground
-                            transportation across the valley</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Beautifully sourced,
-                            holistic daily meals</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Deep cultural
-                            interpretation and guided philosophical reflection</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Intimate travel in
-                            Prateek’s personal vehicle (up to 3 guests)</span></li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>Continuous space for open,
-                            unstructured, meaningful conversation</span></li>
+                    {{ if .Site.Params.investment.included_items }}
+                        {{ range .Site.Params.investment.included_items }}
+                            <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                    style="color: var(--color-forest);">&mdash;</span> <span>{{ . }}</span>
+                            </li>
+                        {{ end }}
+                    {{ else }}
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Personal hosting, presence,
+                                and attention by Prateek</span>
+                        </li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Private airport transfers
+                                to and from Kathmandu</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Curated, highly comfortable
+                                accommodations</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>All private ground
+                                transportation across the valley</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Beautifully sourced,
+                                holistic daily meals</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Deep cultural
+                                interpretation and guided philosophical reflection</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Intimate travel in
+                                Prateek’s personal vehicle (up to 3 guests)</span></li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>Continuous space for open,
+                                unstructured, meaningful conversation</span></li>
+                    {{ end }}
                 </ul>
             </div>
             <div class="list-block">
                 <h3 class="serif-title"
-                    style="font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-text-muted);">A La
-                    Carte & Exclusions</h3>
+                    style="font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--color-text-muted);">{{ .Site.Params.investment.excluded_title | default "A La Carte & Exclusions" }}</h3>
                 <ul class="body-text"
                     style="list-style: none; padding: 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
-                        <span>International flights to Kathmandu</span>
-                    </li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
-                        <span>Entry visa processing for Nepal</span>
-                    </li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
-                        <span>Personal shopping, souvenirs, and luxury items</span>
-                    </li>
-                    <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
-                        <span>Alcoholic beverages</span>
-                    </li>
+                    {{ if .Site.Params.investment.excluded_items }}
+                        {{ range .Site.Params.investment.excluded_items }}
+                            <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
+                                <span>{{ . }}</span>
+                            </li>
+                        {{ end }}
+                    {{ else }}
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
+                            <span>International flights to Kathmandu</span>
+                        </li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
+                            <span>Entry visa processing for Nepal</span>
+                        </li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
+                            <span>Personal shopping, souvenirs, and luxury items</span>
+                        </li>
+                        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span>&mdash;</span>
+                            <span>Alcoholic beverages</span>
+                        </li>
+                    {{ end }}
                 </ul>
             </div>
         </div>
@@ -288,93 +337,105 @@
 <!-- FAQ -->
 <section id="faq" class="section bg-ivory">
     <div class="container narrow-container fade-in-up">
-        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+        <h2 class="section-title text-center">{{ .Site.Params.faq_title | default "Frequently Asked Questions" }}</h2>
 
-        <div class="faq-item">
-            <button class="faq-question">What does this Why-cation include? <span>+</span></button>
-            <div class="faq-answer">
-                <p>A guided reflective travel experience in Nepal shaped around your pace, interests, and inner space —
-                    not a fixed itinerary.</p>
-                <p>Each journey blends nature, culture, and quiet reflection. You may experience scenic drives, short
-                    walks, meaningful conversations, journaling, meditation, shared meals, and time simply to pause and
-                    observe.</p>
-                <p>Nothing is rushed or scheduled tightly. The experience unfolds naturally, allowing space for both
-                    exploration and stillness.</p>
-                <p>At its heart, this journey is about slowing down, reconnecting with yourself, and experiencing Nepal
-                    in a personal and grounded way.</p>
+        {{ if .Site.Params.faq }}
+            {{ range .Site.Params.faq }}
+                <div class="faq-item">
+                    <button class="faq-question">{{ .question }} <span>+</span></button>
+                    <div class="faq-answer">
+                        {{ range .answers }}
+                            <p>{{ . | safeHTML }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+            {{ end }}
+        {{ else }}
+            <div class="faq-item">
+                <button class="faq-question">What does this Why-cation include? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>A guided reflective travel experience in Nepal shaped around your pace, interests, and inner space —
+                        not a fixed itinerary.</p>
+                    <p>Each journey blends nature, culture, and quiet reflection. You may experience scenic drives, short
+                        walks, meaningful conversations, journaling, meditation, shared meals, and time simply to pause and
+                        observe.</p>
+                    <p>Nothing is rushed or scheduled tightly. The experience unfolds naturally, allowing space for both
+                        exploration and stillness.</p>
+                    <p>At its heart, this journey is about slowing down, reconnecting with yourself, and experiencing Nepal
+                        in a personal and grounded way.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-question">What is the investment for this journey? <span>+</span></button>
-            <div class="faq-answer">
-                <p>This is a private, guided reflective journey rather than a group tour.</p>
-                <p>The investment typically ranges between $4,000 – $6,000, depending on whether you choose a 5-day,
-                    7-day, or 10-day experience.</p>
-                <p>It includes:</p>
-                <ul
-                    style="list-style: none; padding: 0.5rem 0 0.5rem 1.25rem; line-height: 1.6; margin-bottom: 1.25rem;">
-                    <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>all ground transportation in
-                            reliable vehicles</span></li>
-                    <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>comfortable lodging</span></li>
-                    <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>local meals during the
-                            journey</span></li>
-                    <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
-                            style="color: var(--color-forest);">&mdash;</span> <span>personalized guidance and
-                            companionship throughout</span></li>
-                </ul>
-                <p>You are not paying for activities alone, but for spacious time, thoughtful presence, and a deeply
-                    personalized experience of Nepal.</p>
+            <div class="faq-item">
+                <button class="faq-question">What is the investment for this journey? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>This is a private, guided reflective journey rather than a group tour.</p>
+                    <p>The investment typically ranges between $4,000 – $6,000, depending on whether you choose a 5-day,
+                        7-day, or 10-day experience.</p>
+                    <p>It includes:</p>
+                    <ul
+                        style="list-style: none; padding: 0.5rem 0 0.5rem 1.25rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                        <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>all ground transportation in
+                                reliable vehicles</span></li>
+                        <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>comfortable lodging</span></li>
+                        <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>local meals during the
+                                journey</span></li>
+                        <li style="margin-bottom: 0.4rem; display: flex; gap: 0.5rem;"><span
+                                style="color: var(--color-forest);">&mdash;</span> <span>personalized guidance and
+                                companionship throughout</span></li>
+                    </ul>
+                    <p>You are not paying for activities alone, but for spacious time, thoughtful presence, and a deeply
+                        personalized experience of Nepal.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-question">What if I don't meditate or hike? <span>+</span></button>
-            <div class="faq-answer">
-                <p>That’s completely fine — no prior experience is needed.</p>
-                <p>The journey adapts to you. Some days may include gentle walks or quiet sitting; other moments may
-                    simply be conversation, observation, or rest. Nothing is forced, and physical intensity is never the
-                    goal.</p>
-                <p>Curiosity matters more than experience.</p>
+            <div class="faq-item">
+                <button class="faq-question">What if I don't meditate or hike? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>That’s completely fine — no prior experience is needed.</p>
+                    <p>The journey adapts to you. Some days may include gentle walks or quiet sitting; other moments may
+                        simply be conversation, observation, or rest. Nothing is forced, and physical intensity is never the
+                        goal.</p>
+                    <p>Curiosity matters more than experience.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-question">Is this spiritual or religious? <span>+</span></button>
-            <div class="faq-answer">
-                <p>No specific religion or belief system is taught or expected.</p>
-                <p>This journey approaches spirituality in an everyday sense — noticing life more carefully, becoming
-                    present, and reconnecting with what feels meaningful to you.</p>
-                <p>We may visit temples or share moments of meditation, but everything is optional. The focus is not on
-                    adopting beliefs, but on experiencing Nepal — and yourself — with greater awareness.</p>
+            <div class="faq-item">
+                <button class="faq-question">Is this spiritual or religious? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>No specific religion or belief system is taught or expected.</p>
+                    <p>This journey approaches spirituality in an everyday sense — noticing life more carefully, becoming
+                        present, and reconnecting with what feels meaningful to you.</p>
+                    <p>We may visit temples or share moments of meditation, but everything is optional. The focus is not on
+                        adopting beliefs, but on experiencing Nepal — and yourself — with greater awareness.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-question">Who is this journey best suited for? <span>+</span></button>
-            <div class="faq-answer">
-                <p>This experience tends to resonate with thoughtful travelers, people in life transitions, and those
-                    seeking pause rather than escape.</p>
-                <p>Many guests arrive not because something is wrong, but because something inside is asking deeper
-                    questions.</p>
+            <div class="faq-item">
+                <button class="faq-question">Who is this journey best suited for? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>This experience tends to resonate with thoughtful travelers, people in life transitions, and those
+                        seeking pause rather than escape.</p>
+                    <p>Many guests arrive not because something is wrong, but because something inside is asking deeper
+                        questions.</p>
+                </div>
             </div>
-        </div>
+        {{ end }}
     </div>
 </section>
 
 <!-- CTA Section -->
 <section class="section cta-banner text-center" style="background-color: #1c1917; color: #e7e5e4;">
     <div class="container fade-in-up">
-        <h2 class="serif-title mb-large" style="color: #fafaf9;">An Invitation to Pause</h2>
+        <h2 class="serif-title mb-large" style="color: #fafaf9;">{{ .Site.Params.cta.title | default "An Invitation to Pause" }}</h2>
         <p class="body-text mb-large"
             style="max-width: 60ch; margin-left: auto; margin-right: auto; font-style: italic;">
-            Space is strictly limited to up to 3 guests per journey to protect the privacy, intimacy, and profound quiet
-            of the container. Applications are thoughtfully reviewed, followed by a connection call.
+            {{ .Site.Params.cta.text | default "Space is strictly limited to up to 3 guests per journey to protect the privacy, intimacy, and profound quiet of the container. Applications are thoughtfully reviewed, followed by a connection call." | safeHTML }}
         </p>
-        <a href='{{ "/apply/" | relURL }}' class="btn-primary light">Begin the Journey</a>
+        <a href='{{ "/apply/" | relURL }}' class="btn-primary light">{{ .Site.Params.cta.button_text | default "Begin the Journey" }}</a>
     </div>
 </section>
 {{ end }}

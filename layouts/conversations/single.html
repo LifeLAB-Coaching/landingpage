@@ -73,6 +73,14 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
+    .about-item {
+        margin-bottom: 3rem;
+    }
+
+    .about-item:last-child {
+        margin-bottom: 0;
+    }
+
     @media (max-width: 768px) {
         .format-grid {
             grid-template-columns: 1fr;
@@ -93,11 +101,11 @@
     {{ end }}
     <div class="sessions-overlay"></div>
     <div class="sessions-hero-content fade-in-up">
-        <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">For 1:1 Conversations</span>
-        <h1 class="hero-title pt-0" style="color: var(--color-ivory);">Conversations</h1>
-        <p class="hero-subtitle">"Life is a story. Living is in the now. You can always edit the script."</p>
+        <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">{{ .Site.Params.conversations.hero.kicker | default "For 1:1 Conversations" }}</span>
+        <h1 class="hero-title pt-0" style="color: var(--color-ivory);">{{ .Site.Params.conversations.hero.title | default "Conversations" }}</h1>
+        <p class="hero-subtitle">{{ .Site.Params.conversations.hero.subtitle | default "\"Life is a story. Living is in the now. You can always edit the script.\"" | safeHTML }}</p>
         <div class="hero-actions">
-            <a href="#book" class="btn-primary">Request a Conversation</a>
+            <a href="#book" class="btn-primary">{{ .Site.Params.conversations.hero.cta_text | default "Request a Conversation" }}</a>
         </div>
     </div>
 </section>
@@ -105,40 +113,45 @@
 <!-- The Format -->
 <section class="section pb-0" id="about">
     <div class="container text-center fade-in-up">
-        <h2 class="serif-title mb-large" style="font-size: 2.8rem;">A space to slow down, breathe, and reflect.
-        </h2>
+        <h2 class="serif-title mb-large" style="font-size: 2.8rem;">{{ .Site.Params.conversations.about.title | default "A space to slow down, breathe, and reflect." }}</h2>
         <p class="body-text large-text" style="max-width: 70ch; margin: 0 auto;">
-            Whether you're a young professional at a crossroads, a thoughtful elder seeking renewal, or simply
-            someone feeling stuck - you are welcome here. These one-on-one sessions are tailored entirely to
-            your
-            pace and depth.
+            {{ .Site.Params.conversations.about.description | default "Whether you're a young professional at a crossroads, a thoughtful elder seeking renewal, or simply someone feeling stuck - you are welcome here. These one-on-one sessions are tailored entirely to your pace and depth." }}
         </p>
 
         <div class="intro-content"
             style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="fade-in-up delay-1" style="margin-bottom: 3rem;">
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">Deep
-                    Listening</h3>
-                <p class="body-text">In a world that rarely stops to hear, these conversations are anchored in deep,
-                    quiet attention. I act as a sounding mirror for your thoughts—listening not just to what is said,
-                    but to the spaces in between.</p>
-            </div>
+            {{ if .Site.Params.conversations.about.items }}
+                {{ range .Site.Params.conversations.about.items }}
+                    <div class="fade-in-up delay-1 about-item">
+                        <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">{{ .title }}</h3>
+                        <p class="body-text">{{ .text }}</p>
+                    </div>
+                {{ end }}
+            {{ else }}
+                <div class="fade-in-up delay-1 about-item">
+                    <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">Deep
+                        Listening</h3>
+                    <p class="body-text">In a world that rarely stops to hear, these conversations are anchored in deep,
+                        quiet attention. I act as a sounding mirror for your thoughts—listening not just to what is said,
+                        but to the spaces in between.</p>
+                </div>
 
-            <div class="fade-in-up delay-1" style="margin-bottom: 3rem;">
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">New
-                    Perspectives</h3>
-                <p class="body-text">Together, we share insights and questions that shift the horizon. We look at the
-                    patterns that no longer serve you and explore the possibilities that arise when we stop trying to
-                    manage everything.</p>
-            </div>
+                <div class="fade-in-up delay-1 about-item">
+                    <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">New
+                        Perspectives</h3>
+                    <p class="body-text">Together, we share insights and questions that shift the horizon. We look at the
+                        patterns that no longer serve you and explore the possibilities that arise when we stop trying to
+                        manage everything.</p>
+                </div>
 
-            <div class="fade-in-up delay-1" style="margin-bottom: 0;">
-                <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">
-                    Organic Flow</h3>
-                <p class="body-text">There is no rigid curriculum. We might talk, sit in silence, or simply observe the
-                    world around us. The conversation follows what is alive in you in the moment, allowing clarity to
-                    emerge naturally.</p>
-            </div>
+                <div class="fade-in-up delay-1 about-item">
+                    <h3 class="serif-title" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-forest);">
+                        Organic Flow</h3>
+                    <p class="body-text">There is no rigid curriculum. We might talk, sit in silence, or simply observe the
+                        world around us. The conversation follows what is alive in you in the moment, allowing clarity to
+                        emerge naturally.</p>
+                </div>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -166,25 +179,32 @@
                 <img src="{{ $prateekWebp.RelPermalink }}" alt="Prateek"
                     style="filter: grayscale(20%); width: 100%; height: auto;" loading="lazy">
                 {{ else }}
-                <img src="{{ " Prateek.jpg" | relURL }}" alt="Prateek"
+                <img src="{{ "Prateek.jpg" | relURL }}" alt="Prateek"
                     style="filter: grayscale(20%); width: 100%; height: auto;" loading="lazy">
                 {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
-                <h2 class="section-title">About Prateek</h2>
+                <h2 class="section-title">{{ .Site.Params.conversations.host.title | default "About Prateek" }}</h2>
                 <p class="body-text">
-                    I’ve spent much of my life teaching, creating, and exploring the human experience—through
-                    university classrooms, trainings, music, and acting. What I’ve learned is that real change
-                    doesn’t come from advice, but from honest conversation and reflection.
-                    <br><br>
-                    I’m not here as an expert with answers. I’m here to listen, to ask, and to hold space for
-                    you to see things more clearly.
-                    <br><br>
-                    I keep this work personal and intentional, so each session feels grounded, open, and real.
-                    This is your space as much as it is mine.
+                    {{ if .Site.Params.conversations.host.paragraphs }}
+                        {{ range $index, $p := .Site.Params.conversations.host.paragraphs }}
+                            {{ if $index }}<br><br>{{ end }}
+                            {{ $p | safeHTML }}
+                        {{ end }}
+                    {{ else }}
+                        I’ve spent much of my life teaching, creating, and exploring the human experience—through
+                        university classrooms, trainings, music, and acting. What I’ve learned is that real change
+                        doesn’t come from advice, but from honest conversation and reflection.
+                        <br><br>
+                        I’m not here as an expert with answers. I’m here to listen, to ask, and to hold space for
+                        you to see things more clearly.
+                        <br><br>
+                        I keep this work personal and intentional, so each session feels grounded, open, and real.
+                        This is your space as much as it is mine.
+                    {{ end }}
                 </p>
                 <p class="body-text" style="font-style: italic; color: var(--color-forest);">
-                    * Request a call to discuss timing and pricing.
+                    {{ .Site.Params.conversations.host.footnote | default "* Request a call to discuss timing and pricing." }}
                 </p>
             </div>
         </div>
@@ -195,10 +215,10 @@
     <div class="container narrow-container fade-in-up">
         <div class="form-wrapper" style="margin-top: 0; padding: 4rem 3rem;">
             <div class="text-center mb-large">
-                <h2 class="serif-title" style="font-size: 2.5rem;">Request a Conversation</h2>
-                <p class="body-text">Fill out the form below to begin a conversation.</p>
+                <h2 class="serif-title" style="font-size: 2.5rem;">{{ .Site.Params.conversations.form.title | default "Request a Conversation" }}</h2>
+                <p class="body-text">{{ .Site.Params.conversations.form.description | default "Fill out the form below to begin a conversation." }}</p>
             </div>
-            <form class="premium-form" id="session-form" action="https://formspree.io/f/mgvykony" method="POST">
+            <form class="premium-form" id="session-form" action="https://formspree.io/f/{{ .Site.Params.conversations.formspree_endpoint | default "mgvykony" }}" method="POST">
                 <input type="hidden" name="_subject" value="New Conversation Request Submission">
                 <input type="hidden" name="Form Submitted" value="Request a Conversation Form">
                 <div class="form-group">
@@ -215,12 +235,28 @@
                         placeholder="Tell me about your current crossroads, or what you're seeking to explore..."></textarea>
                 </div>
                 <div class="form-actions mt-medium text-center">
-                    <button type="submit" class="btn-primary" style="width: 100%;">Request a Conversation</button>
+                    <button type="submit" class="btn-primary" style="width: 100%;">{{ .Site.Params.conversations.form.button_text | default "Request a Conversation" }}</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
+
+<!-- Success HTML storage for AJAX -->
+<div id="session-success-content" style="display: none;">
+    {{ .Site.Params.conversations.form.success_html | default `
+    <div class="text-center" style="padding: 2rem 0;">
+        <h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3>
+        <p class="body-text large-text">Thank you. Prateek will get back to you shortly to schedule our conversation.</p>
+        <div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">Contemplative Reading</h4>
+            <p class="body-text" style="font-size: 1rem; margin-bottom: 0;">
+                If you are preparing for a discovery call, we invite you to request a complimentary copy of Prateek's book, <strong>'How You Happen'</strong>, on our <a href="/book/" style="color: var(--color-forest); text-decoration: underline; font-weight: 500;">Book Page</a> to align with the core philosophy we will explore.
+            </p>
+        </div>
+    </div>
+    ` | safeHTML }}
+</div>
 {{ end }}
 
 
@@ -243,7 +279,15 @@
                 });
 
                 if (response.ok) {
-                    sessionForm.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title mb-medium" style="font-size: 2.2rem; color: var(--color-forest);">Message Sent</h3><p class="body-text large-text">Thank you. Prateek will get back to you shortly to schedule our conversation.</p><div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;"><h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">Contemplative Reading</h4><p class="body-text" style="font-size: 1rem; margin-bottom: 0;">If you are preparing for a discovery call, we invite you to request a complimentary copy of Prateek\'s book, <strong>\'How You Happen\'</strong>, on our <a href="/book/" style="color: var(--color-forest); text-decoration: underline; font-weight: 500;">Book Page</a> to align with the core philosophy we will explore.</p></div></div>';
+                    const container = sessionForm.closest('.form-wrapper') || sessionForm;
+                    const successHtml = document.getElementById('session-success-content').innerHTML;
+                    container.innerHTML = successHtml;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'form_complete', {
+                            'form_id': 'session-form',
+                            'form_name': 'Request a Conversation Form'
+                        });
+                    }
                 } else {
                     btn.textContent = 'Error. Try again.';
                     btn.disabled = false;

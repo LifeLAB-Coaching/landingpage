@@ -80,4 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Google Analytics - Form Start Tracking
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        let formStarted = false;
+        const trackStart = () => {
+            if (!formStarted) {
+                formStarted = true;
+                const formId = form.getAttribute('id') || 'unknown-form';
+                const formName = form.querySelector('input[name="Form Submitted"]')?.value || formId;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'form_start', {
+                        'form_id': formId,
+                        'form_name': formName
+                    });
+                }
+            }
+        };
+        // Trigger on any input focus or interaction
+        form.querySelectorAll('input, textarea, select').forEach(input => {
+            input.addEventListener('focus', trackStart, { once: true });
+            input.addEventListener('input', trackStart, { once: true });
+        });
+    });
 });

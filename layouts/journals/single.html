@@ -57,4 +57,15 @@
         </div>
     </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'journal_read', {
+        'journal_title': '{{ .Title }}',
+        'journal_url': '{{ .RelPermalink }}'
+      });
+    }
+  });
+</script>
 {{ end }}

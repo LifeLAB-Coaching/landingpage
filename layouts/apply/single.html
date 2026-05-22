@@ -2,18 +2,16 @@
 <section class="section apply-section">
     <div class="container narrow-container fade-in-up visible">
         <div class="apply-header text-center">
-            <h1 class="serif-title">Application for Your Why-cation</h1>
+            <h1 class="serif-title">{{ .Site.Params.apply.title | default "Application for Your Why-cation" }}</h1>
             <p class="body-text">
-                <br>This Why-cation is by application only. Space is strictly limited to up to 3
-                individuals - this helps me preserve the intimacy and attention I provide to your personal
-                experience.
-                <br><br><strong>Duration is typically 5 - 10 days.</strong>
-                <br><br>Please fill out the questions below as honestly as you can.
+                <br>{{ .Site.Params.apply.description | default "This Why-cation is by application only. Space is strictly limited to up to 3 individuals - this helps me preserve the intimacy and attention I provide to your personal experience." }}
+                <br><br><strong>{{ .Site.Params.apply.duration | default "Duration is typically 5 - 10 days." }}</strong>
+                <br><br>{{ .Site.Params.apply.instruction | default "Please fill out the questions below as honestly as you can." }}
             </p>
         </div>
 
         <div class="form-wrapper">
-            <form class="premium-form" id="apply-form" action="https://formspree.io/f/mkoqdaqw" method="POST">
+            <form class="premium-form" id="apply-form" action="https://formspree.io/f/{{ .Site.Params.apply.formspree_endpoint | default "mkoqdaqw" }}" method="POST">
                 <input type="hidden" name="_subject" value="New Why-cation Application Submission">
                 <input type="hidden" name="Form Submitted" value="Why-cation Application Form">
                 <div class="form-row">
@@ -69,7 +67,7 @@
 
                 <div class="form-group">
                     <label for="budget">Investment Understanding</label>
-                    <p class="form-hint">The all-inclusive Why-cation investment is $4,000 - $6,000.</p>
+                    <p class="form-hint">{{ .Site.Params.apply.investment_hint | default "The all-inclusive Why-cation investment is $4,000 - $6,000." }}</p>
                     <select id="budget" name="budget_confirmation" required>
                         <option value="" disabled selected>Please confirm your understanding</option>
                         <option value="understood-ready">I understand and this aligns with my plans.</option>
@@ -78,17 +76,31 @@
                 </div>
 
                 <div class="form-actions mt-large">
-                    <button type="submit" class="btn-primary block">Submit Application</button>
+                    <button type="submit" class="btn-primary block">{{ .Site.Params.apply.button_text | default "Submit Application" }}</button>
                     <p class="form-disclaimer">
-                        Within 48 hours, Prateek will email you to schedule a casual 30-minute discovery call to
-                        ensure the Why-cation is a perfect fit. No deposit is required until after our
-                        conversation.
+                        {{ .Site.Params.apply.disclaimer | default "Within 48 hours, Prateek will email you to schedule a casual 30-minute discovery call to ensure the Why-cation is a perfect fit. No deposit is required until after our conversation." }}
                     </p>
                 </div>
             </form>
         </div>
     </div>
 </section>
+
+<!-- Success HTML storage for AJAX -->
+<div id="apply-success-content" style="display: none;">
+    {{ .Site.Params.apply.success_html | default `
+    <div class="text-center" style="padding: 2rem 0;">
+        <h3 class="serif-title mb-large" style="font-size: 2.2rem; color: var(--color-forest);">Application Received</h3>
+        <p class="body-text large-text">Thank you. Prateek will review your application and be in touch within 48 hours to schedule a casual 30-minute discovery call.</p>
+        <div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">A Welcoming Gift</h4>
+            <p class="body-text" style="font-size: 1rem; margin-bottom: 0;">
+                While we prepare for our conversation, we have sent a complimentary digital copy of Prateek's book, <strong>'How You Happen'</strong>, to your email. It serves as a window into the quiet, unstructured spaces we will explore together in the Himalayas.
+            </p>
+        </div>
+    </div>
+    ` | safeHTML }}
+</div>
 {{ end }}
 
 {{ define "scripts" }}
@@ -109,7 +121,15 @@
                 });
 
                 if (response.ok) {
-                    form.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title mb-large" style="font-size: 2.2rem; color: var(--color-forest);">Application Received</h3><p class="body-text large-text">Thank you. Prateek will review your application and be in touch within 48 hours to schedule a casual 30-minute discovery call.</p><div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;"><h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">A Welcoming Gift</h4><p class="body-text" style="font-size: 1rem; margin-bottom: 0;">While we prepare for our conversation, we have sent a complimentary digital copy of Prateek\'s book, <strong>\'How You Happen\'</strong>, to your email. It serves as a window into the quiet, unstructured spaces we will explore together in the Himalayas.</p></div></div>';
+                    const container = form.closest('.form-wrapper') || form;
+                    const successHtml = document.getElementById('apply-success-content').innerHTML;
+                    container.innerHTML = successHtml;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'form_complete', {
+                            'form_id': 'apply-form',
+                            'form_name': 'Why-cation Application Form'
+                        });
+                    }
                 } else {
                     submitBtn.textContent = 'Error. Try again.';
                     submitBtn.disabled = false;
