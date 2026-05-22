@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Rounded forest green background -->
+  <rect width="512" height="512" rx="128" fill="#2d3b2e"/>
+  
+  <!-- Left/Back Mountain Peak (Muted Sage) -->
+  <path d="M90 400 L240 190 L330 300 L440 150 L470 400 Z" fill="#8ca08c" opacity="0.5"/>
+  
+  <!-- Right/Front Mountain Peak (Premium Warm Ivory) -->
+  <path d="M160 400 L300 130 L380 240 L440 160 L470 400 Z" fill="#eae9e0"/>
+  
+  <!-- Reflective/Clarity Sun/Peak highlight -->
+  <circle cx="300" cy="130" r="16" fill="#2d3b2e" stroke="#eae9e0" stroke-width="8"/>
+</svg>

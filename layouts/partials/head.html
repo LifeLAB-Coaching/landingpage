@@ -11,6 +11,8 @@
 </script>
 <title>{{ if .IsHome }}{{ .Site.Title }} – Reflective Travel{{ else }}{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="Why-cation  -  A Reflective Journey in the Nepali Himalayas. Leave schedules behind. Enter stillness. Hosted by Prateek Raj Neupane." />
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+<link rel="shortcut icon" href="{{ "favicon.svg" | relURL }}">
 
 {{ $styles := resources.Get "styles.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
