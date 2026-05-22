@@ -3,15 +3,15 @@
 <section class="hero cinematic-hero">
     {{ $hero := resources.Get "images/hero-image.jpeg" }}
     {{ if $hero }}
-        {{ $heroWebp := $hero.Resize "2000x webp q85" }}
-        <div class="hero-bg" style="background-image: url('{{ $heroWebp.RelPermalink }}');"></div>
+    {{ $heroWebp := $hero.Resize "2000x webp q85" }}
+    <div class="hero-bg" style="background-image: url('{{ $heroWebp.RelPermalink }}');"></div>
     {{ else }}
-        <div class="hero-bg" style="background-image: url('/images/hero-image.jpeg');"></div>
+    <div class="hero-bg" style="background-image: url('/images/hero-image.jpeg');"></div>
     {{ end }}
     <div class="hero-overlay-dark"></div>
     <div class="hero-content fade-in-up">
         <span class="hero-kicker">Limited to up to 3 participants</span>
-        <h1 class="hero-title">Becoming Human</h1>
+        <h1 class="hero-title">Why-cation</h1>
         <p class="hero-subtitle"
             style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 2.0; letter-spacing: 0.02em;">
             <i> An intimate and private reflective travel experience in Nepal for thoughtful individuals seeking
@@ -100,18 +100,18 @@
             <div class="split-image fade-in-up">
                 {{ $journeyImage := resources.Get "images/reflective-journey.jpeg" }}
                 {{ if $journeyImage }}
-                    {{ $journeyWebp := $journeyImage.Resize "1200x webp q80" }}
-                    <img src="{{ $journeyWebp.RelPermalink }}" alt="Reflective Journey" loading="lazy">
+                {{ $journeyWebp := $journeyImage.Resize "1200x webp q80" }}
+                <img src="{{ $journeyWebp.RelPermalink }}" alt="Reflective Journey" loading="lazy">
                 {{ else }}
-                    <img src='{{ "reflective-journey.jpeg" | relURL }}' alt="Reflective Journey" loading="lazy">
+                <img src='{{ "reflective-journey.jpeg" | relURL }}' alt="Reflective Journey" loading="lazy">
                 {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
-                <h2 class="section-title">The Reflective Journey</h2>
+                <h2 class="section-title">The Why-cation</h2>
                 <p class="body-text">
                     We trade the usual "tour" for time: time to think, ask big questions, and just be. In the
                     same way one might pay for a coach or mentor, here you’re experiencing an intimate
-                    Reflective Journey where nothing is forced but everything is possible.
+                    Why-cation where nothing is forced but everything is possible.
                 </p>
                 <ul class="journey-features">
                     <li>
@@ -149,12 +149,12 @@
             <div class="split-image fade-in-up">
                 {{ $prateek := resources.Get "images/Prateek.jpg" }}
                 {{ if $prateek }}
-                    {{ $prateekWebp := $prateek.Resize "1200x webp q85" }}
-                    <img src="{{ $prateekWebp.RelPermalink }}" alt="Prateek Raj Neupane"
-                        style="filter: grayscale(20%) contrast(110%);" loading="lazy">
+                {{ $prateekWebp := $prateek.Resize "1200x webp q85" }}
+                <img src="{{ $prateekWebp.RelPermalink }}" alt="Prateek Raj Neupane"
+                    style="filter: grayscale(20%) contrast(110%);" loading="lazy">
                 {{ else }}
-                    <img src='{{ "Prateek.jpg" | relURL }}' alt="Prateek Raj Neupane"
-                        style="filter: grayscale(20%) contrast(110%);" loading="lazy">
+                <img src='{{ "Prateek.jpg" | relURL }}' alt="Prateek Raj Neupane"
+                    style="filter: grayscale(20%) contrast(110%);" loading="lazy">
                 {{ end }}
             </div>
             <div class="split-content fade-in-up delay-1">
@@ -191,27 +191,32 @@
                     feel rushed or forced. You feel listened to — not analyzed, not judged. Somehow you end up talking
                     about things you didn’t know you needed to say. You leave lighter, but also thinking more deeply
                     about your own life."</p>
+                <div class="testimonial-author">&mdash; Michael, USA</div>
             </div>
             <div class="testimonial-item">
                 <p class="testimonial-quote">"What stands out about him is how he listens. He doesn’t interrupt or try
                     to fix you. He listens fully, and then responds in a way that makes you see your own thoughts
                     differently. Conversations with him feel less like discussion and more like discovery."</p>
+                <div class="testimonial-author">&mdash; Kimmo, Finland</div>
             </div>
             <div class="testimonial-item">
                 <p class="testimonial-quote">"Traveling with Prateek is different from normal travel. It’s not about
                     checking places off a list. You notice small things — silence, people, stories, your own reactions.
                     There is laughter, music, long conversations, and also comfortable quiet. The journey feels inward
                     as much as outward."</p>
+                <div class="testimonial-author">&mdash; Christine, USA</div>
             </div>
             <div class="testimonial-item">
                 <p class="testimonial-quote">"Around him, you feel accepted as you are. There is no pressure to impress
                     or pretend. His presence makes space for honesty — both joyful and difficult parts of life. You feel
                     grounded without being told what to believe."</p>
+                <div class="testimonial-author">&mdash; Pollak, Hungary</div>
             </div>
             <div class="testimonial-item">
                 <p class="testimonial-quote">"Time spent with him stays with you. Not because he gives answers, but
                     because he asks questions — sometimes without words — that continue working inside you long after
                     the meeting ends."</p>
+                <div class="testimonial-author">&mdash; Carmen, Germany</div>
             </div>
         </div>
     </div>
@@ -286,7 +291,7 @@
         <h2 class="section-title text-center">Frequently Asked Questions</h2>
 
         <div class="faq-item">
-            <button class="faq-question">What does this Reflective Journey include? <span>+</span></button>
+            <button class="faq-question">What does this Why-cation include? <span>+</span></button>
             <div class="faq-answer">
                 <p>A guided reflective travel experience in Nepal shaped around your pace, interests, and inner space —
                     not a fixed itinerary.</p>

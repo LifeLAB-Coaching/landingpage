@@ -2,39 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/journals/</loc>
+    <loc>https://lifelabnepal.com/journals/</loc>
     <lastmod>2026-04-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://lifelabnepal.com/</loc>
     <lastmod>2026-04-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/journals/whycation/</loc>
+    <loc>https://lifelabnepal.com/journals/whycation/</loc>
     <lastmod>2026-04-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/journals/first-entry/</loc>
+    <loc>https://lifelabnepal.com/journals/first-entry/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/apply/</loc>
+    <loc>https://lifelabnepal.com/apply/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/conversations/</loc>
+    <loc>https://lifelabnepal.com/contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/who-this-is-for/</loc>
+    <loc>https://lifelabnepal.com/conversations/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/why-nepal/</loc>
+    <loc>https://lifelabnepal.com/book/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://lifelabnepal.com/who-this-is-for/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://lifelabnepal.com/why-nepal/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

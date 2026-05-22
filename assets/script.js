@@ -31,11 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.nav');
+    const header = document.querySelector('.header');
 
     if (mobileMenuToggle && nav) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('nav-open');
             nav.classList.toggle('nav-open');
+            if (header) {
+                header.classList.toggle('nav-open');
+            }
             document.body.style.overflow = nav.classList.contains('nav-open') ? 'hidden' : '';
         });
 
@@ -43,13 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 mobileMenuToggle.classList.remove('nav-open');
                 nav.classList.remove('nav-open');
+                if (header) {
+                    header.classList.remove('nav-open');
+                }
                 document.body.style.overflow = '';
             });
         });
     }
 
     // Header scroll effect
-    const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {

@@ -2,9 +2,9 @@
 <section class="section apply-section">
     <div class="container narrow-container fade-in-up visible">
         <div class="apply-header text-center">
-            <h1 class="serif-title">Application for Your Reflective Journey</h1>
+            <h1 class="serif-title">Application for Your Why-cation</h1>
             <p class="body-text">
-                <br>This Reflective Journey is by application only. Space is strictly limited to up to 3
+                <br>This Why-cation is by application only. Space is strictly limited to up to 3
                 individuals - this helps me preserve the intimacy and attention I provide to your personal
                 experience.
                 <br><br><strong>Duration is typically 5 - 10 days.</strong>
@@ -14,6 +14,8 @@
 
         <div class="form-wrapper">
             <form class="premium-form" id="apply-form" action="https://formspree.io/f/mkoqdaqw" method="POST">
+                <input type="hidden" name="_subject" value="New Why-cation Application Submission">
+                <input type="hidden" name="Form Submitted" value="Why-cation Application Form">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -48,7 +50,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="intention">What are your expectations from this reflective journey?</label>
+                    <label for="intention">What are your expectations from this Why-cation?</label>
                     <textarea id="intention" name="intention" rows="4" required
                         placeholder="Tell me about where you are in life, why now, and what you’re seeking..."></textarea>
                 </div>
@@ -67,7 +69,7 @@
 
                 <div class="form-group">
                     <label for="budget">Investment Understanding</label>
-                    <p class="form-hint">The all-inclusive reflective journey investment is $4,000 - $6,000.</p>
+                    <p class="form-hint">The all-inclusive Why-cation investment is $4,000 - $6,000.</p>
                     <select id="budget" name="budget_confirmation" required>
                         <option value="" disabled selected>Please confirm your understanding</option>
                         <option value="understood-ready">I understand and this aligns with my plans.</option>
@@ -79,7 +81,7 @@
                     <button type="submit" class="btn-primary block">Submit Application</button>
                     <p class="form-disclaimer">
                         Within 48 hours, Prateek will email you to schedule a casual 30-minute discovery call to
-                        ensure the reflective journey is a perfect fit. No deposit is required until after our
+                        ensure the Why-cation is a perfect fit. No deposit is required until after our
                         conversation.
                     </p>
                 </div>
@@ -107,7 +109,7 @@
                 });
 
                 if (response.ok) {
-                    form.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title mb-large" style="font-size: 2rem; color: var(--color-forest);">Application Received</h3><p class="body-text">Thank you. Prateek will be in touch within 48 hours to schedule a discovery call.</p></div>';
+                    form.innerHTML = '<div class="text-center" style="padding: 2rem 0;"><h3 class="serif-title mb-large" style="font-size: 2.2rem; color: var(--color-forest);">Application Received</h3><p class="body-text large-text">Thank you. Prateek will review your application and be in touch within 48 hours to schedule a casual 30-minute discovery call.</p><div style="margin-top: 3rem; padding: 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;"><h4 class="serif-title" style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 1rem;">A Welcoming Gift</h4><p class="body-text" style="font-size: 1rem; margin-bottom: 0;">While we prepare for our conversation, we have sent a complimentary digital copy of Prateek\'s book, <strong>\'How You Happen\'</strong>, to your email. It serves as a window into the quiet, unstructured spaces we will explore together in the Himalayas.</p></div></div>';
                 } else {
                     submitBtn.textContent = 'Error. Try again.';
                     submitBtn.disabled = false;

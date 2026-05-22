@@ -29,6 +29,27 @@
             {{ .Content }}
         </article>
         
+        <!-- Book Promo Box -->
+        <div style="margin-top: 5rem; padding: 3rem 2.5rem; background-color: var(--color-stone); border-radius: 8px; border: 1px solid rgba(0,0,0,0.04); display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2rem; align-items: center; text-align: left;">
+            <div style="display: flex; justify-content: center;">
+                <a href="/book/" style="text-decoration: none; color: inherit; display: block; perspective: 1000px;">
+                    <div class="book-mini-cover" style="width: 110px; height: 160px; background-image: url('/images/book-cover.jpg'); background-size: cover; background-position: center; border-radius: 2px 4px 4px 2px; box-shadow: 5px 5px 15px rgba(0,0,0,0.15); transform: rotateY(-15deg); transition: transform 0.4s ease; position: relative;">
+                        <!-- Spine effect for the mini book cover -->
+                        <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.1) 100%); border-radius: 2px 0 0 2px;"></div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-forest); font-weight: 500;">Core Manifesto</span>
+                <h4 class="serif-title" style="font-size: 1.75rem; margin-top: 0.5rem; margin-bottom: 0.75rem; color: var(--color-text-dark); line-height: 1.3;">How You Happen</h4>
+                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">An anti-self-help manifesto written for those exhausted by corporate mindfulness, toxic positivity, and the pressure to constantly optimize.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="/book/#preview" style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--color-forest); font-weight: 500; text-decoration: underline;">Read a Free Sample &rarr;</a>
+                    <a href="/book/#request-manuscript" style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--color-text-dark); font-weight: 500; text-decoration: underline;">Request a Copy &rarr;</a>
+                </div>
+            </div>
+        </div>
+        
         <div style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--color-stone); padding-top: 3rem;">
             <a href="{{ "/journals/" | relURL }}" class="btn-primary light" style="background-color: transparent; border: 1px solid var(--color-forest); color: var(--color-forest);">
                 &larr; Back to Journals
