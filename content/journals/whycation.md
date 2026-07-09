@@ -1,91 +1,40 @@
 ---
 title: "Whycation: From Approval to Acknowledgement"
 date: 2026-04-10
-photo: "/images/whycation-journal.jpg"
+photo: "/images/jomsom-whycation.jpg"
 ---
 
-There is an inner world, an outer world, and a live interaction between them.
+Most of us travel to get away from our routine. A break, a recharge, an escape. A Why-cation is something different. It’s travel that brings you closer to yourself.
 
-The outer world is what we can see — what we accumulate, where we go, what we show, measurable. The inner world is quieter. It is where meaning lives, and is immeasurable.
+We think we spend most of our lives in the outer world. Working, planning, consuming, moving from one thing to the next, multitasking through the day. It becomes easy to live on autopilot. Not because life is forced on us, but because we keep allowing things into our lives without questioning them.
 
-What we see outside is often just a reflection of what is happening inside. But somewhere along the way, we start believing the opposite — that if we gather enough outside, something inside will settle.
+The idea of allowing is not new. In the ancient epic *Ramayan*, there is the concept of the *Laxman-rekha*: a line drawn to protect *Sita*. Nothing could cross it unless she allowed it. In the story of Dracula, the same idea appears again: it cannot enter a home unless it is invited in. Across stories and metaphors, the same point keeps returning in different forms. What enters our life often does so through our own permission. And these days, we are so busy we don’t even notice what we are allowing in anymore.
 
-So we keep moving.
-Collecting.
-Adding.
+A Why-cation is an attempt to become aware of that permission again.
 
-And yet, something doesn’t quite feel right.
+It’s travel, but with reflection built into it. Not as an activity on the side, but as part of the experience itself. You see new places, eat well, laugh deeply, enjoy beer by the riverside, long conversations over local food, the stillness of mountains, and unfamiliar ways of living; but you also pay attention to how you are experiencing them. You meet people, but you also pay attention to the kind of conversations you are having. You move through the world, but you don’t lose yourself in it.
 
-There is a subtle dissatisfaction that builds when life is guided only by external expectations. Standards set by others slowly become our compass. What to achieve, where to go, how to live — it is all defined somewhere outside of us.
+Because the real shift is not just where you are, but how present you are while you are there.
 
-And when we follow it long enough, we begin to feel lost.
-Not because the world is confusing, but because we have moved away from ourselves.
+A Why-cation slows things down enough for a different kind of attention to emerge. One that is not only focused outward, but inward too. The kind of attention we often avoid by keeping ourselves busy the moment silence appears.
 
-There is very little space for reflection. Very little pause. Life becomes a series of movements without understanding. Even rest starts to follow the same pattern.
+It opens space for questions that usually get buried under movement:
 
-Vacations, which are meant to be a break, quietly become another form of expectation. We are supposed to come back “recharged,” as if we are tools with batteries. We are supposed to collect moments — photos, videos, experiences — and present them.
+Why am I doing what I’m doing?
+What have I been allowing into my life without questioning?
+What actually matters to me when I’m not performing for anyone?
 
-The more unique, the more expensive, the more different — it all seems to matter.
-And without noticing, even rest becomes performance.
+And just as importantly, it creates space for real conversations with others. Not surface-level talk, but honest reflections about how differently people experience the same world.
 
-I remember traveling with a few people, and noticing how differently we experienced the same place. Conversations often moved around what was bought, what was expensive, what had been checked off a list. There was a sense of completion in accumulation.
+Travel still happens. You still explore, enjoy, and discover.
 
-> “Look at the stuff you have accumulated and reflect for a while.”
+Sunrise over the mighty mountains. Slow mornings in small towns. Laughter over shared meals. Throwing pebbles into rivers and watching them skip across the water, without needing to count how many you threw.
 
-But what stayed with me were different things:
-How people lived.
-How they understood life.
-The reason behind the way their homes were built.
-How families interacted.
-What they valued.
-What they feared.
-What they aspired towards.
+But something subtle shifts.
 
-It wasn’t better or worse. Just different ways of seeing.
-But in that difference, something became clear.
+You stop only collecting or capturing experiences.
+You start noticing the awareness behind them.
 
-One way of living and traveling was about **approval** — what can be shown, shared, validated.
-The other was closer to **acknowledgement** — what is quietly seen, felt, and understood.
+The point is not to reject the outer world. It is to stop forgetting yourself inside it.
 
-That shift changes everything.
-
-When the journey turns inward, the need for approval starts to soften. There is less urgency to prove, to display, to accumulate. Instead, there is a gentle curiosity about life itself.
-
-Travel is no longer just about where you go, but how you experience it.
-The outer journey doesn’t lose its value — it deepens.
-Because when you begin to reflect, the world becomes more than a backdrop. It becomes a mirror, a live book, and a space to connect.
-
-> “Close your eyes and look at the person you have become or are becoming.”
-
-But this kind of space is rare.
-There are very few places, and even fewer people, where one can simply pause without expectation. To sit with questions like:
-- Who am I?
-- Why am I doing what I am doing?
-- What does life mean to me?
-- What am I really seeking?
-
-To have conversations like:
-- Who are You?
-- Why are you doing what you are doing?
-- What does life mean to you?
-- What are you really seeking?
-
-Not to answer them quickly, but to stay with them. To really understand each other, and our worlds.
-
-Over time, I found myself naturally moving away from many external expectations. Not as a reaction, but as a quiet adjustment. Keeping what felt true, letting go of what didn’t.
-
-Living a little more simply.
-Observing a little more closely.
-Listening a little more deeply.
-
-And in doing so, something else became clear.
-This way of being doesn’t need to be explained or taught. But it can be shared. Not as an idea, but as a space.
-
-A space where the outer and inner journeys can meet.
-Where there is no pressure to perform.
-Where reflection is not rushed.
-Where acknowledgement replaces approval.
-
-Life doesn’t become perfect in that space.
-But it becomes more real.
-And sometimes, that is enough.
+And sometimes, that changes everything. Not the journey itself, but the way you are in it.
