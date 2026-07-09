@@ -1,7 +1,7 @@
 ---
-title: "Things I would share with my daughter"
+title: "Things I would share with my daughter #1"
 date: 2026-04-08
-photo: "/images/journal-spirit.png"
+photo: "/images/upper-mustang-things-I_would-share-with-my-daughter-1.jpg"
 ---
 
 Dear chhori (daughter in Nepali),
@@ -18,7 +18,7 @@ Being just physically alone is not alone enough. For me it is something bigger. 
 
 If traveling alone is not an option then travel with someone you trust enough to just be yourself, and who can be a mirror for your self-reflection.
 
-It is about being so free from within that you have the ability to be a 100% present wherever you are. I always try to be 100% present wherever I am, with full attention and awareness, and it is not that easy. There are many things in life that demand your attention within your awareness, because we are interdependent beings - interdependent with others, and context.
+It is about being so free from within that you have the ability to be a hundred present wherever you are. I always try to be a hundred present wherever I am, with full attention and awareness, and it is not that easy. There are many things in life that demand our attention within our awareness, because we are interdependent beings. Interdependent with others, and context.
 
 Through the years I’ve found that not everyone does it, because being honestly present where you are for a sustained period of time, is not easy. There are many distractions for people in the world right now, especially in the fast urban life. There is so much noise and perceived lack of time, that as people, we have stopped realizing who we are, and are we even present or not.
 
@@ -30,7 +30,7 @@ This realization in me makes me alert to be present wherever I am, with whoever 
 
 Silence, and traveling to nature helps you have internal conversations with yourself like this one. To the mountains, rivers, forests and such, because they are just there, as a witness to your presence.
 
-So, chhori, to feel freedom, travel alone. But, to be holistically present, try to be a hundred percent connected to wherever you are without giving in to the pull of internal stories, or external distractions.
+So chhori, to feel freedom, travel alone. But, to be holistically present, try to be a hundred percent connected to wherever you are without giving in to the pull of internal stories, or external distractions.
 
 _Be where you are, aware and attentive_, that is honest presence. Honesty without telling.
 
