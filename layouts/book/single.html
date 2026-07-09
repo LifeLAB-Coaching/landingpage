@@ -345,7 +345,7 @@
     <div class="container book-hero-container">
         <div class="book-hero-content fade-in-up">
             <span class="book-tagline">{{ .Site.Params.book.tagline | default "Newly Written Manifesto" }}</span>
-            <h1 class="book-main-title">{{ .Title }}</h1>
+            <h1 class="book-main-title">{{ .Params.title_html | default .Title | safeHTML }}</h1>
             <p class="book-subtitle">{{ .Params.subtitle | default .Site.Params.book.subtitle }}</p>
             <div class="hero-actions">
                 <a href="#preview" class="btn-primary" style="padding: 1rem 3rem;">{{ .Site.Params.book.button_sample | default "Read Online Sample" }}</a>

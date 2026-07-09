@@ -1,5 +1,6 @@
 ---
 title: "We Are What We Repeat"
+title_html: "We Are <br> What We Repeat"
 date: 2026-06-03
 photo: "/images/Annapurna-morning-we-are-what-we-repeat.jpg"
 ---

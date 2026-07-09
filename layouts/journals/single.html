@@ -11,7 +11,7 @@
     <div class="hero-overlay-dark"></div>
     <div class="hero-content fade-in-up mt-large" style="padding-top: 4rem;">
         <span class="hero-kicker" style="border-color: rgba(255,255,255,0.4);">Journal Entry</span>
-        <h1 class="hero-title" style="color: var(--color-ivory);">{{ .Title }}</h1>
+        <h1 class="hero-title" style="color: var(--color-ivory);">{{ .Params.title_html | default .Title | safeHTML }}</h1>
     </div>
 </section>
 {{ end }}
@@ -21,7 +21,7 @@
         {{ if not .Params.photo }}
         <div style="margin-bottom: 3rem; text-align: center;">
             <span class="hero-kicker" style="border-color: var(--color-stone); color: var(--color-text-muted);">Journal Entry</span>
-            <h1 class="serif-title" style="font-size: 3rem; margin-top: 1rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Title }}</h1>
+            <h1 class="serif-title" style="font-size: 3rem; margin-top: 1rem; margin-bottom: 0.5rem; color: var(--color-forest);">{{ .Params.title_html | default .Title | safeHTML }}</h1>
         </div>
         {{ end }}
         
