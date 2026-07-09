@@ -38,3 +38,6 @@ You start noticing the awareness behind them.
 The point is not to reject the outer world. It is to stop forgetting yourself inside it.
 
 And sometimes, that changes everything. Not the journey itself, but the way you are in it.
+
+{{< video src="Dolalghat-pebble-river-video-for-whycation-article.mp4" caption="Throwing pebbles into the river, Dolalghat." >}}
+

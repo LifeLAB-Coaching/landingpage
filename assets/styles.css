@@ -605,6 +605,34 @@ a {
     letter-spacing: 0.02em;
 }
 
+/* Editorial Content Videos */
+.editorial-video-container {
+    margin: 4rem 0;
+    width: 100%;
+}
+
+.editorial-video-container.breakout {
+    margin-left: -15%;
+    width: 130%;
+}
+
+@media (max-width: 1300px) {
+    .editorial-video-container.breakout {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.editorial-video {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    display: block;
+    background-color: #000;
+}
+
+
 .image-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

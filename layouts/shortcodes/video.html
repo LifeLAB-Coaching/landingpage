@@ -1,0 +1,39 @@
+{{- $src := .Get "src" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $class := .Get "class" | default "editorial-video" -}}
+{{- $autoplay := .Get "autoplay" | default "false" -}}
+{{- $loop := .Get "loop" | default "false" -}}
+{{- $muted := .Get "muted" | default "false" -}}
+{{- $controls := .Get "controls" | default "true" -}}
+
+{{- $video := resources.Get (printf "videos/%s" (path.Base $src)) -}}
+{{- if not $video -}}
+    {{- $video = resources.Get $src -}}
+{{- end -}}
+
+<div class="editorial-video-container">
+    {{- if $video -}}
+        <video class="{{ $class }}" 
+               {{ if eq $controls "true" }}controls{{ end }} 
+               {{ if eq $autoplay "true" }}autoplay{{ end }} 
+               {{ if eq $loop "true" }}loop{{ end }} 
+               {{ if eq $muted "true" }}muted{{ end }} 
+               playsinline>
+            <source src="{{ $video.RelPermalink }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {{- else -}}
+        <video class="{{ $class }}" 
+               {{ if eq $controls "true" }}controls{{ end }} 
+               {{ if eq $autoplay "true" }}autoplay{{ end }} 
+               {{ if eq $loop "true" }}loop{{ end }} 
+               {{ if eq $muted "true" }}muted{{ end }} 
+               playsinline>
+            <source src="{{ $src | relURL }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {{- end -}}
+    {{- if $caption -}}
+        <p class="image-caption">{{ $caption }}</p>
+    {{- end -}}
+</div>
